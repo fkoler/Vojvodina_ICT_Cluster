@@ -16,7 +16,7 @@ public class ZapreminaKupe {
 //		V = 1/3*r*r*H*PI;
 		V = (r*r*H*PI) / 3;
 		
-		System.out.println(V);
+		System.out.println("Zapremina kupe V je: " + V);
 		
 		double res = Math.cos(0.5);
 		System.out.println(res);
