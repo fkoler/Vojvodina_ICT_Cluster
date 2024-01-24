@@ -2,27 +2,24 @@ package prviProjekat;
 
 public class Zadatak {
 	
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		
 		int a;
 		int b;
 		
-		a = 3;
-		b = 4;
+		a = 8;
+		b = 3;
 		
 		int sabiranje = a + b;
 		int oduzimanje = a - b;
-		int mozenje = a * b;
+		int mnozenje = a * b;
 		double deljenje = (double) a / b;
 		int modulo = a % b;
 		
-		System.out.println(sabiranje);
-		System.out.println(oduzimanje);
-		System.out.println(mozenje);
-		System.out.println(deljenje);
-		System.out.println(modulo);
-		
+		System.out.println(a + " + " + b + " = " + sabiranje);
+		System.out.println(a + " - " + b + " = " + oduzimanje);
+		System.out.println(a + " * " + b + " = " + mnozenje);
+		System.out.println(a + " / " + b + " = " + deljenje);
+		System.out.println(a + " % " + b + " = " + modulo);		
 	}
-
 }
