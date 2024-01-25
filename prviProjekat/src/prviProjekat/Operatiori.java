@@ -18,6 +18,7 @@ public class Operatiori {
 
 		int x = ++a; // a = a + 1; x = a
 
+		System.out.println("a = " + a);
 		System.out.println("x = " + x);
 
 		int y = a++; // y = a; a = a + 1
@@ -43,48 +44,35 @@ public class Operatiori {
 
 		boolean ba = x < y;
 		System.out.println("ba = " + ba);
-		
+
 		boolean bt = y != z;
 		System.out.println("bt = " + bt);
 
-//		boolean a = true, b = false;
-//		/* Negacija. */
-//		System.out.print("Negacija od true je: "); System.out.println(!a);
-//		System.out.print("Negacija od false je: "); System.out.println(!b);
-//		/* I operacija. */
-//		System.out.print("true I false je: "); System.out.println(a && b);
-//		System.out.print("true I true je: "); System.out.println(a && a);
-//		System.out.print("false I false je: "); System.out.println(b && b);
-//		/* ILI operacija. */
-//		System.out.print("true ILI false je: "); System.out.println(a || b);
-//		System.out.print("true ILI true je: "); System.out.println(a || a);
-//		System.out.print("false ILI false je: "); System.out.println(b || b);
-//		/* Eksluzivno ILI operacija. */
-//		System.out.print("true EXILI false je: "); System.out.println(a ^ b);
-//		System.out.print("true EXILI true je: "); System.out.println(a ^ a);
-//		System.out.print("false EXILI false je: "); System.out.println(b ^ b);
+//      -----------------
+		System.out.println("-----------------");
 
-//		int a = 6;
-//		int b = 4;
-//
-//		int o = (a = b + 2) * 10;
-//
-//		System.out.println("a = " + a);
-//		System.out.println("b = " + b);
-//		System.out.println("o = " + o);
+		a = 6;
+		b = 4;
+
+		int o = (a = b + 2) * 10;
+
+		System.out.println("a = " + a);
+		System.out.println("b = " + b);
+		System.out.println("o = " + o);
 
 //		b = b + 10;
-//		b += 10;
+		b += 10;
 //
-//		System.out.println("b = " + b);
+		System.out.println("b = " + b);
 //
-//		o *= b + a; // o = o * b + a || o = o * (b + a) // prvo desna strana
+		o *= b + a; // o = o * b + a || o = o * (b + a) // prvo desna strana//
+		System.out.println("o = " + o);
 //
-//		System.out.println("o = " + o);
-//
-//		int x = (a < b) ? a : b;
-//
-//		System.out.println("Manji od a = " + a + " i b = " + b + " je " + x);
+		x = (a < b) ? a : b;//
+		System.out.println("Manji od a=" + a + " i b=" + b + ", je " + x);
 
+		char w = (a > b) ? 'a' : 'b';
+		System.out.println(w);
+		System.out.println("Veci od a=" + a + " i b=" + b + ", je " + w);
 	}
 }
