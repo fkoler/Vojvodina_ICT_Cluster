@@ -6,6 +6,7 @@ public class IzlistavanjeSlova {
 		String str; // linija teksta koju unosi korisnik.
 		int ukSlova; // ukupan broj razlicitih slova u str tekstu.
 		char slovo; // Slovo iz alfabeta.
+		int ukJednogSlova; // Ukupan broj pojavljivanja jednog slova
 		int i; // indeks slova u nizu karaktera string str.
 		System.out.println("Unesite jedan red teskta:");
 		str = TextIO.getln();
@@ -16,17 +17,27 @@ public class IzlistavanjeSlova {
 		System.out.print(" ");
 
 		for (slovo = 'A'; slovo <= 'Z'; slovo++) {
+			ukJednogSlova = 0;
 			for (i = 0; i < str.length(); i++) {
 				if (slovo == str.charAt(i)) {
-					System.out.print(slovo);
-					System.out.print(' ');
-					ukSlova++;
-					break;
+					if (ukJednogSlova == 0) {
+						System.out.print(slovo);
+						System.out.print('[');
+						ukSlova++;
+						ukJednogSlova++;
+					} else {
+						ukJednogSlova++;
+					}
+
 				}
+				if (ukJednogSlova > 0) {
+					System.out.print(ukJednogSlova);
+					System.out.print("]");
+				}
+				System.out.println();
+				System.out.println();
+				System.out.println("Otkriveno je " + ukSlova + " razlicitih slova.");
 			}
 		}
-		System.out.println();
-		System.out.println();
-		System.out.println("Otkriveno je " + ukSlova + " razlicitih slova.");
 	}
 }

@@ -21,7 +21,7 @@ public class IfSelekcijaPrimer {
 			System.out.println("Vrlo dobar!");
 		else if (ocena == 5)
 			System.out.println("Odlican!");
-		else if (ocena != 1 && ocena != 2 && ocena != 3 && ocena != 4 && ocena != 5)
+		else
 			System.out.println("Nije dobro uneta vrednost");
 	}
 }

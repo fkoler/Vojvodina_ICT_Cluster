@@ -5,23 +5,28 @@ public class SwitchSelekcijaPrimer {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int status;
-		String potez = "nije pomerio";
-		status = TextIO.getlnInt();
+		System.out.println("Unesite zeljeni smer kretanja (0 - 3):");
+
+		String status;
+		String potez;
+		status = TextIO.getlnString();
+
 		switch (status) {
-		case 0:
+		case "w":
 			potez = "pomerio gore";
 			break;
-		case 1:
+		case "s":
 			potez = "pomerio dole";
 			break;
-		case 2:
+		case "a":
 			potez = "pomerio levo";
 			break;
-		case 3:
+		case "d":
 			potez = "pomerio desno";
+			break;
+		default:
+			potez = "nije pomerio";
 		}
-		System.out.println("Igrac se " + potez); // Greska!
+		System.out.println("Igrac se " + potez);
 	}
-
 }
