@@ -1,10 +1,10 @@
-package prviProjekat;
+package Operatori;
 
-public class Operatiori {
+public class Operatori {
 
 	public static void main(String[] args) {
 
-		int a = 4, b = 5;
+		int a = 4, b = 5; // iskaz - unutar su izrazi
 
 		int u = a - -b;
 
@@ -41,6 +41,8 @@ public class Operatiori {
 
 		z = 1.2 + t;
 		System.out.println("z = " + z);
+		
+//      -----------------
 
 		boolean ba = x < y;
 		System.out.println("ba = " + ba);
@@ -49,6 +51,7 @@ public class Operatiori {
 		System.out.println("bt = " + bt);
 
 //      -----------------
+		
 		System.out.println("-----------------");
 
 		a = 6;
@@ -65,7 +68,7 @@ public class Operatiori {
 //
 		System.out.println("b = " + b);
 //
-		o *= b + a; // o = o * b + a || o = o * (b + a) // prvo desna strana//
+		o *= b + a; // o = o * b + a || o = o * (b + a) // prvo desna strana!!
 		System.out.println("o = " + o);
 //
 		x = (a < b) ? a : b;//

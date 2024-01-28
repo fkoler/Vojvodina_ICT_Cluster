@@ -1,4 +1,4 @@
-package prviProjekat;
+package Operatori;
 
 public class Gravitacija {
 

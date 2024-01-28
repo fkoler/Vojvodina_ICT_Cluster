@@ -3,7 +3,7 @@ package prviProjekat;
 public class EnumISwitch {
 
 	enum Dan {
-		PONEDELJAK, UTORAK, SREDA, CETVRTAK, PETAK, SUBOTA, NEDELJA
+		PONEDELJAK, UTORAK, SREDA, CETVRTAK, PETAK, SUBOTA, NEDELJA, NEISPRAVNO
 	}
 
 	public static void main(String[] args) {
@@ -39,10 +39,10 @@ public class EnumISwitch {
 				danRodjenja = Dan.NEDELJA;
 				break;
 			default:
-				danRodjenja = Dan.NEDELJA;
+				danRodjenja = Dan.NEISPRAVNO;
 				System.out.println("Vrednost je van opsega");
 		}
 
-		System.out.println("Uneli ste >>" + danRodjenja );
+		System.out.println("Uneli ste >> " + danRodjenja );
 	}
 }

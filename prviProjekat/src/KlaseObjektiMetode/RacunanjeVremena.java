@@ -1,4 +1,4 @@
-package prviProjekat;
+package KlaseObjektiMetode;
 
 public class RacunanjeVremena {
 

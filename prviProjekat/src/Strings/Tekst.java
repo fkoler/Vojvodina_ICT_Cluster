@@ -1,4 +1,4 @@
-package prviProjekat;
+package Strings;
 
 public class Tekst {
 
@@ -12,8 +12,8 @@ public class Tekst {
 		System.out.println(str.toUpperCase());
 
 		System.out.println(str.equals("Djura Djuric"));
-		System.out.println(str.equals("DjuraDjuric"));
+		System.out.println(str.equals("DjuraDjuric "));
 		System.out.println(str.compareTo("Djura Djuric"));
-		System.out.println(str.compareTo("DjuraDjuric "));
+		System.out.println(str.compareTo("djura djuric"));
 	}
 }

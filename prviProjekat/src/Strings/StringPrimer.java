@@ -1,4 +1,4 @@
-package prviProjekat;
+package Strings;
 
 public class StringPrimer {
 
