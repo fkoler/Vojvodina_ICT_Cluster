@@ -1,15 +1,20 @@
-package prviProjekat;
+package UpravljackeStrukture;
 
-public class IfSwitchSelekcijaPrimer {
+public class DoWhileOcena {
 
 	public static void main(String[] args) {
-		/* Definicija promenljive */
+
 		int ocena;
-		/* Unos podatka */
 		System.out.println("Program za ispis uspeha na osnovu unete ocene!");
-		System.out.print("Unesite ocenu: ");
-		ocena = TextIO.getlnInt();
-		/* Odredjivanje uspeha i ispis */
+
+		// do-while petlja se koristi da se proveri ulazna vrednost
+		do {
+			System.out.print("Unesite ocenu: ");
+			ocena = TextIO.getlnInt();
+			if ((ocena < 1) || (ocena > 5))
+				System.out.println("Ocena mora biti izmedju 1 i 5.");
+		} while ((ocena < 1) || (ocena > 5));
+
 		switch (ocena) {
 		case 1:
 			System.out.println("Nedovoljan!");
@@ -25,16 +30,6 @@ public class IfSwitchSelekcijaPrimer {
 			break;
 		case 5:
 			System.out.println("Odlican!");
-			break;
-		default:
-			System.out.println("Nije dobro uneta vrednost");
 		}
-
-		int x = 0;
-
-		if (ocena == 2)
-			x = 32;
-
-		System.out.println("x = " + x);
 	}
 }

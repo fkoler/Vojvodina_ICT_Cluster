@@ -1,4 +1,6 @@
-package prviProjekat;
+package UpravljackeStrukture;
+
+import prviProjekat.TextIO;
 
 public class KojiJeVeciIfElse {
 
@@ -11,11 +13,11 @@ public class KojiJeVeciIfElse {
 		int secondNumber = TextIO.getlnInt();
 
 		if (firstNumber > secondNumber) {
-			System.out.printf("%d is bigger than %d", firstNumber, secondNumber);
+			System.out.printf("\n%d is bigger than %d", firstNumber, secondNumber);
 		} else if (firstNumber == secondNumber) {
-			System.out.printf("%d is equal to %d", firstNumber, secondNumber);
+			System.out.printf("\n%d is equal to %d", firstNumber, secondNumber);
 		} else {
-			System.out.printf("%d is bigger than %d", secondNumber, firstNumber);
+			System.out.printf("\n%d is bigger than %d", secondNumber, firstNumber);
 		}
 	}
 }

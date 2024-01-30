@@ -1,4 +1,4 @@
-package prviProjekat;
+package EnumTipovi;
 
 public class EnumPrimerMeseciDani {
 
@@ -15,11 +15,13 @@ public class EnumPrimerMeseciDani {
 		Mesec mesecRodjenja; // promenljiva tipa Mesec.
 		danRodjenja = Dan.SUBOTA; // dodela vrednosti promenljivoj tipa Dan.
 		mesecRodjenja = Mesec.FEBRUAR; // dodela vrednosti promenljivoj tipa Mesec.
-		System.out.println("Moj znak je vodolija, jer sam ja rodjen u " + mesecRodjenja + "u.");
+		System.out.println("Moj znak je vodolija, jer sam ja rodjen u " + mesecRodjenja + "-u.");
 		System.out.println("To je " + (mesecRodjenja.ordinal() + 1) + ". mesec godine."); // zasto +1
 		System.out.println("Dan kada sam se rodio je " + danRodjenja + ".");
-		System.out.println(danRodjenja + " je " + (danRodjenja.ordinal() + 1) + ". dan nedelje.");
+		System.out.println(danRodjenja + " je " + (danRodjenja.ordinal() + 1) + ". dan u nedelji.");
 
+		System.out.println("-------------------------------");
+		
 		final Dan nDan = Dan.CETVRTAK;
 		int c = danRodjenja.ordinal() + nDan.ordinal();
 		System.out.println(c);
@@ -28,7 +30,7 @@ public class EnumPrimerMeseciDani {
 		System.out.printf("Danas je %d. dan u nedelji i trenutno je %d:%d sati", dani, 6, 17);
 
 		double mnogo = 123.456789001;
-		System.out.printf("\n	Ovo je razlomljena vrednost: %012.2f", mnogo);
+		System.out.printf("\nOvo je razlomljena vrednost: %012.2f", mnogo);
 
 	}
 }

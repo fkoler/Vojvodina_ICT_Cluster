@@ -1,4 +1,4 @@
-package prviProjekat;
+package EnumTipovi;
 
 public class EnumPrimer {
 	enum OCENA {
@@ -10,6 +10,7 @@ public class EnumPrimer {
 
 		OCENA x = OCENA.Dva;
 
+		System.out.println(x);
 		System.out.println(x.ordinal());
 	}
 }

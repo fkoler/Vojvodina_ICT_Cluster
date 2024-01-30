@@ -1,11 +1,13 @@
-package prviProjekat;
+package UpravljackeStrukture;
+
+import prviProjekat.TextIO;
 
 public class SwitchSelekcijaPrimer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println("Unesite zeljeni smer kretanja (0 - 3):");
+		System.out.println("Unesite zeljeni smer kretanja (a-levo, s-dole, d-desno, w-gore)");
 
 		String status;
 		String potez;

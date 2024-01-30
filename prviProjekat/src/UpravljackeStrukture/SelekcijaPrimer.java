@@ -1,4 +1,6 @@
-package prviProjekat;
+package UpravljackeStrukture;
+
+import prviProjekat.TextIO;
 
 public class SelekcijaPrimer {
 
@@ -13,16 +15,22 @@ public class SelekcijaPrimer {
 //			
 //		System.out.println("Mozda nije");
 
-		if (x == 0)
+		if (x == 0) {
 			System.out.println("0");
-			else
-				if (x == 1)
+
+			if (x != 0) {
+				System.out.println("Idemo dalje");
+			} else if (x == 1) {
 				System.out.println("1");
-			else 
-				if (x == 2)
+			} else if (x == 2) {
 				System.out.println("2");
-			else
+			} else {
 				System.out.println("Nista Od Toga");
+			}
+
+		} else {
+			System.out.println("Stvarno Nista");
+		}
 
 	}
 }

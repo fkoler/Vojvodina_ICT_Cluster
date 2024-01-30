@@ -1,4 +1,6 @@
-package prviProjekat;
+package UpravljackeStrukture;
+
+import prviProjekat.TextIO;
 
 public class EnumISwitch {
 

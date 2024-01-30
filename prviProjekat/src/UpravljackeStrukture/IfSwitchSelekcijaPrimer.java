@@ -1,27 +1,49 @@
-package prviProjekat;
+package UpravljackeStrukture;
 
-public class IfSelekcijaPrimer {
+import prviProjekat.TextIO;
+
+public class IfSwitchSelekcijaPrimer {
 
 	public static void main(String[] args) {
 
 		/* Definicija promenljive */
 		int ocena;
+
 		/* Unos podatka */
 		System.out.println("Program za ispis uspeha na osnovu unete ocene!");
 		System.out.print("Unesite ocenu: ");
 		ocena = TextIO.getlnInt();
+
 		/* Odredjivanje uspeha i ispis */
-		if (ocena == 1)
+		switch (ocena) {
+		case 1:
 			System.out.println("Nedovoljan!");
-		else if (ocena == 2)
+			break;
+		case 2:
 			System.out.println("Dovoljan!");
-		else if (ocena == 3)
+			break;
+		case 3:
 			System.out.println("Dobar!");
-		else if (ocena == 4)
+			break;
+		case 4:
 			System.out.println("Vrlo dobar!");
-		else if (ocena == 5)
+			break;
+		case 5:
 			System.out.println("Odlican!");
-		else
+			break;
+		default:
 			System.out.println("Nije dobro uneta vrednost");
+		}
+
+//		int x;
+		int x = 0;
+
+		if (ocena == 2) {
+			x = 32;
+		} else {
+			x = 0;
+		}
+
+		System.out.println("x = " + x);
 	}
 }
