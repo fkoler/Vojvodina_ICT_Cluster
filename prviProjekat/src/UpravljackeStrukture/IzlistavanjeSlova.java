@@ -11,7 +11,7 @@ public class IzlistavanjeSlova {
 		char slovo; // Slovo iz alfabeta.
 		int i; // indeks slova u nizu karaktera string str.
 
-		System.out.println("Unesite jedan red teskta:");
+		System.out.println("Unesite jedan red teksta:");
 
 		str = TextIO.getln();
 		str = str.toUpperCase();
@@ -23,7 +23,6 @@ public class IzlistavanjeSlova {
 			for (i = 0; i < str.length(); i++) {
 				if (slovo == str.charAt(i)) {
 					System.out.print("  "+ slovo);
-					System.out.print(' ');
 					ukSlova++;
 					break;
 				}				
