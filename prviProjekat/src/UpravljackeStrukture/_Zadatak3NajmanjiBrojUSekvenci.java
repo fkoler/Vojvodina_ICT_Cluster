@@ -23,9 +23,15 @@ public class _Zadatak3NajmanjiBrojUSekvenci {
 			do {
 
 				broj = TextIO.getlnInt();
+				if (broj < donji || broj > gornji) {
+					System.out.println("Uneta vrednost nije u zadatom opsegu");
+					i--;
+					break;
+				}
 				if (broj < najmanjiBroj) {
 					najmanjiBroj = broj;
 				}
+
 			} while (broj < donji || broj > gornji);
 		}
 
