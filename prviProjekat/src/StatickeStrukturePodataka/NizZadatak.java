@@ -33,7 +33,7 @@ public class NizZadatak {
 
 		System.out.println("Suma elemenata niza izosi: " + suma);
 		System.out.println("\nNajveci broj u nizu je: " + najveciBroj);
-		System.out.print("Nalazi se na sledećim pozicijama: ");
+		System.out.print("Nalazi se na sledecim pozicijama: ");
 
 		for (i = 0; i < NizPrirordnihBrojeva.length; i++) { // izracunaj poziciju maksimalnog elemenata niza
 			if (NizPrirordnihBrojeva[pozicijaNajvecegBroja] == NizPrirordnihBrojeva[i]) {
