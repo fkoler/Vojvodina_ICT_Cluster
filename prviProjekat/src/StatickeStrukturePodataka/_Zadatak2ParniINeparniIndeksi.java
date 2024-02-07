@@ -45,17 +45,17 @@ public class _Zadatak2ParniINeparniIndeksi {
 		}
 
 		// ispis niza "A"
-		System.out.print("Parni indeksi A=[");
+		System.out.print("Parni indeksi A = [ ");
 		for (int i = 0; i < brElA; i++) {
-			System.out.print(A[i] + ", ");
+			System.out.print(A[i] + " ");
 		}
-		System.out.println(A[brElA] + "]");
+		System.out.println( "]");
 
 		// ispis niza "B"
-		System.out.print("Neparni indeksi B=[");
+		System.out.print("Neparni indeksi B = [ ");
 		for (int i = 0; i < brElB; i++) {
-			System.out.print(B[i] + ", ");
+			System.out.print(B[i] + " ");
 		}
-		System.out.println(B[brElB] + "]");
+		System.out.println("]");
 	}
 }

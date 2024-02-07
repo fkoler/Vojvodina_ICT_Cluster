@@ -68,6 +68,6 @@ public class KalkulatorPrimer {
 	}
 
 	static void prikaziRezultat(double op1, double op2, double rez, char op) {
-		System.out.printf("\n%8.2f\t%s %8.2f = %8.2f\n", op1, op, op2, rez);
+		System.out.printf("%2.2f %s %2.2f = %2.2f", op1, op, op2, rez);
 	}
 }

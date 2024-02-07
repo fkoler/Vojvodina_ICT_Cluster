@@ -5,7 +5,7 @@ public class SortiranjePrimer {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int tmp;
+//		int tmp;
 		int[] x = new int[] { 5, 2, 9, 7, 1, 3 };
 
 		System.out.print("x=[");
@@ -34,6 +34,7 @@ public class SortiranjePrimer {
 				x[j + 1] = x[j];
 				j = j - 1;
 			}
+			
 			x[j + 1] = key;
 		}
 
@@ -44,6 +45,5 @@ public class SortiranjePrimer {
 			System.out.print(", " + x[i]);
 		}
 		System.out.println("]");
-
 	}
 }
