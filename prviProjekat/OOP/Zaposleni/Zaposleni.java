@@ -13,21 +13,27 @@ prikazujemo platu */
 
 public class Zaposleni {
 
-	String ime;
-	String prezime;
-	double koefRadnogMesta;
-	double plata;
+	String ime, prezime;
+	double koefRadnogMesta, plata;
 
-	void postaviIme(String i) {
+	void postaviIme(String i) {		
 		ime = i;
 	}
 
-	void postaviPrezime(String p) {
+	void postaviPrezime(String p) {		
 		prezime = p;
 	}
 
-	void racunanjePlate(double koef) {
-		plata = 3600 * koef;
-		System.out.println("Plata je: " + plata);
+	void postaviKoeficijent(double k) {		
+		koefRadnogMesta = k;
+	}
+
+	void racunanjePlate() {
+		plata = 3600 * koefRadnogMesta;
+	}
+
+	void ispisPlate() {
+		System.out.println("Zaposleni: " + ime + " " + prezime);
+		System.out.println("Plata: " + plata);
 	}
 }
