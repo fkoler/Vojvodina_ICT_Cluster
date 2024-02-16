@@ -1,4 +1,4 @@
-package oopPrimer;
+package PorukaPrivate;
 
 public class Main {
 
@@ -6,8 +6,8 @@ public class Main {
 		
 		Poruka p = new Poruka();
 		
-		p.tekst = "Zdravo svete!";
+		// p.tekst = "Zdravo svete!“; greska!!!		
 		p.postaviTekst("Zdravo OOP svete!");
-		p.pribaviTekst();
+		p.prikaziPoruku();
 	}
 }

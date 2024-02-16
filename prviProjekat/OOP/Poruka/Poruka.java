@@ -1,4 +1,4 @@
-package oopPrimer;
+package Poruka;
 
 public class Poruka {
 	

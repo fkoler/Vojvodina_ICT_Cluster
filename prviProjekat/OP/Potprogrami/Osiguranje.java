@@ -20,44 +20,56 @@ package Potprogrami;
 
 public class Osiguranje {
 
-	static final int DANI = 3;
+	static final int DANI = 30;
 	static final int KATEGORIJE = 5;
 
 	public static void main(String[] args) {
 
-		double[][] evidOsig = new double[][] {{ 100, 57, 88, 74, 123 }, 
-											  { 158, 157, 828, 76, 323 },
-											  { 103, 257, 85, 70, 523 }};
+//		double[][] evidOsig = new double[][] { { 100, 57, 88, 74, 123 }, { 158, 157, 828, 76, 323 },
+//				{ 103, 257, 85, 70, 523 } };
 
-		// double[][] evidOsig = new double[DANI][KATEGORIJE];
+		 double[][] evidOsig = new double[DANI][KATEGORIJE];
 		char izbor = '0';
 		do {
 
-			// meni
+			// Meni iz kojeg se biraju ponuđene funkcije.
 			ispisMeni();
 
 			// izbor
 			izbor = preuzmiChar("", "Morate odabrati vrednost u opsegu od 0-8", '0', '8');
 
 			switch (izbor) {
+			case '0':
+				System.out.println("\n\tDovidjenja");
+				break;
+			// Unos ostvarenog prihoda za zadatu kategoriju osiguranja i dan u mesecu.
 			case '1':
 				unosPrihoda(evidOsig);
 				break;
+			// Izmenu ostvarenog prihoda za zadatu kategoriju osiguranja i dan u mesecu.
 			case '2':
 				povecajPrihod(evidOsig);
 				break;
+			// Prikaz rezultata sortiran po kategorijama osiguranja za izabrani dan u
+			// mesecu.
 			case '3':
 				sortiraniPrikazKategorijaZaDan(evidOsig);
 				break;
+			// Prikaz rezultata sortiran po danima u mesecu za izabranu kategoriju.
 			case '4':
 				sortiraniPrikazDanaZaKategoriju(evidOsig);
 				break;
+			// Izračunavanje i prikaz dana kad je ostvaren najmanji prihod i koliko on
+			// iznosi.
 			case '5':
 				danSaNajmanjimPrihodom(evidOsig);
 				break;
+			// Izračunavanje i prikaz ukupnog mesečnog prihod za svaku kategoriju
+			// osiguranja.
 			case '6':
 				prihodPoKategorijama(evidOsig);
 				break;
+			// Izračunavanje i prikaz prosečnog mesečnog prihoda.
 			case '7':
 				mesecniPrihod(evidOsig);
 				break;
@@ -66,23 +78,23 @@ public class Osiguranje {
 			}
 
 		} while (izbor != '0');
-
 	}
 
 	static void ispisMeni() {
-		System.out.println("--Program za vođenje evidencije agenta osiguranja--");
-		System.out.println("  Izaberite jednu od opcija->");
+		System.out.println("-- Program za vođenje evidencije agenta osiguranja --");
+		System.out.println("-- Izaberite jednu od opcija -->");
 		System.out.println("\t0. Izlazak iz programa");
 		System.out.println("\t1. Unos prihoda za željenu kategoriju i željeni dan");
-		System.out.println("\t2. ....");
-		System.out.println("\t3. ....");
-		System.out.println("\t4. ....");
-		System.out.println("\t5. ....");
-		System.out.println("\t6. ....");
-		System.out.println("\t7. ....");
-		System.out.println("\t8. ....");
+		System.out.println("\t2. Izmenu ostvarenog prihoda za zadatu kategoriju osiguranja i dan u mesecu");
+		System.out.println("\t3. Prikaz rezultata sortiran po kategorijama osiguranja za izabrani dan u mesecu.");
+		System.out.println("\t4. Prikaz rezultata sortiran po danima u mesecu za izabranu kategoriju.");
+		System.out.println("\t5. Izračunavanje i prikaz dana kad je ostvaren najmanji prihod i koliko on iznosi.");
+		System.out.println("\t6. Izračunavanje i prikaz ukupnog mesečnog prihod za svaku kategoriju osiguranja.");
+		System.out.println("\t7. Izračunavanje i prikaz prosečnog mesečnog prihoda.");
+		System.out.println("\t8. Ispisi matricu");
 	}
 
+	// Biranje opcije
 	static char preuzmiChar(String poruka, String porukaGreska, char dole, char gore) {
 		char vred = '0';
 		do {
@@ -95,6 +107,7 @@ public class Osiguranje {
 		return vred;
 	}
 
+	// Funkcija za ispisivanje gresaka
 	static int preuzmiInt(String poruka, String porukaGreska, int dole, int gore) {
 		int vred = 0;
 		do {
@@ -107,6 +120,7 @@ public class Osiguranje {
 		return vred;
 	}
 
+	// 1. Unos ostvarenog prihoda za zadatu kategoriju osiguranja i dan u mesecu.
 	static void unosPrihoda(double[][] eo) {
 		int dan, kat;
 		char odg = 'n';
@@ -123,6 +137,7 @@ public class Osiguranje {
 		} while (odg == 'd' || odg == 'D');
 	}
 
+	// 2. Izmenu ostvarenog prihoda za zadatu kategoriju osiguranja i dan u mesecu.
 	static void povecajPrihod(double[][] eo) {
 		int dan, kat;
 		char odg = 'n';
@@ -155,6 +170,7 @@ public class Osiguranje {
 		} while (odg == 'd' || odg == 'D');
 	}
 
+	// 4. Prikaz rezultata sortiran po danima u mesecu za izabranu kategoriju.
 	static void sortiraniPrikazDanaZaKategoriju(double[][] eo) {
 		double[] sortDani = new double[DANI];
 		int[] indeksSortDani = new int[DANI];
@@ -194,6 +210,7 @@ public class Osiguranje {
 		} while (odg == 'd' || odg == 'D');
 	}
 
+	// 3. Prikaz rezultata sortiran po kategorijama osiguranja za izabrani dan u mesecu.
 	static void sortiraniPrikazKategorijaZaDan(double[][] eo) {
 		int dan;
 		char odg = 'n';
@@ -208,16 +225,6 @@ public class Osiguranje {
 				sortKategorije[i] = eo[dan - 1][i];
 				indeksSortKategorije[i] = i;
 			}
-			// sortiranje
-			/*
-			 * for (int i = 0; i < KATEGORIJE-1; i++) for (int j = i+1; j < KATEGORIJE; j++)
-			 * { if(sortKategorije[i] < sortKategorije[j]) { double tmpD =
-			 * sortKategorije[i]; sortKategorije[i] = sortKategorije[j]; sortKategorije[j] =
-			 * tmpD;
-			 * 
-			 * int tmpI = indeksSortKategorije[i]; indeksSortKategorije[i] =
-			 * indeksSortKategorije[j]; indeksSortKategorije[j] = tmpI; } }
-			 */
 
 			sortirajNizove(sortKategorije, indeksSortKategorije, KATEGORIJE);
 			System.out.println("Prodaja kategorija za " + dan + ". dana izgleda:");
@@ -244,6 +251,7 @@ public class Osiguranje {
 			}
 	}
 
+	// 5. Izračunavanje i prikaz dana kad je ostvaren najmanji prihod i koliko on iznosi.
 	static void danSaNajmanjimPrihodom(double eo[][]) {
 		int pozMin = 0;
 
@@ -262,6 +270,7 @@ public class Osiguranje {
 
 	}
 
+	// 6. Izračunavanje i prikaz ukupnog mesečnog prihod za svaku kategoriju osiguranja.
 	static void prihodPoKategorijama(double eo[][]) {
 		double[] zaradaPoKategorijama = new double[KATEGORIJE];
 
@@ -273,6 +282,7 @@ public class Osiguranje {
 
 	}
 
+	// 7. Izračunavanje i prikaz prosečnog mesečnog prihoda.
 	static void mesecniPrihod(double eo[][]) {
 		double suma = 0;
 		for (int j = 0; j < KATEGORIJE; j++)
@@ -282,6 +292,7 @@ public class Osiguranje {
 		System.out.println("Prosečni mesečni prihod je: " + suma);
 	}
 
+	// 8. Prikaz Matrice
 	static void izlistajMatricu(double eo[][], String nazivVrste, String nazivKolone) {
 		int i, j;
 

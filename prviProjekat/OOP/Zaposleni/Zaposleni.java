@@ -14,7 +14,8 @@ prikazujemo platu */
 public class Zaposleni {
 
 	String ime, prezime;
-	double koefRadnogMesta, plata;
+	int koefRadnogMesta, plata;
+	int faktor = 3600;
 
 	void postaviIme(String i) {		
 		ime = i;
@@ -24,16 +25,17 @@ public class Zaposleni {
 		prezime = p;
 	}
 
-	void postaviKoeficijent(double k) {		
+	void postaviKoeficijent(int k) {		
 		koefRadnogMesta = k;
 	}
 
 	void racunanjePlate() {
-		plata = 3600 * koefRadnogMesta;
+		plata =  faktor * koefRadnogMesta;
 	}
 
 	void ispisPlate() {
 		System.out.println("Zaposleni: " + ime + " " + prezime);
+		System.out.println("Koeficijent zaposlenog: " + koefRadnogMesta);
 		System.out.println("Plata: " + plata);
 	}
 }

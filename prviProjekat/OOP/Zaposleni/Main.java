@@ -7,27 +7,27 @@ public class Main {
 		Zaposleni radnik = new Zaposleni();
 
 		String imeZaposlenog, prezimeZaposlenog;
-		double koeficijentZaposlenog;
+		int koeficijentZaposlenog;
 
 		do {
-			System.out.println("Unesite ime zaposlenog:\t");
-			imeZaposlenog = TextIO.getlnString();			
-			
-			System.out.println("Unesite prezime zaposlenog:\t");
+			System.out.print("Unesite ime zaposlenog: \t");
+			imeZaposlenog = TextIO.getlnString();
+
+			System.out.print("Unesite prezime zaposlenog: \t");
 			prezimeZaposlenog = TextIO.getlnString();
-			
-			System.out.println("Unesite koeficijent zaposlenog:\t");
-			koeficijentZaposlenog = TextIO.getlnDouble();
-			
-			if(imeZaposlenog == "" || prezimeZaposlenog == "" ||                                       			     koeficijentZaposlenog == 0) {
+
+			System.out.print("Unesite koeficijent zaposlenog: ");
+			koeficijentZaposlenog = TextIO.getlnInt();
+
+			if (imeZaposlenog == "" || prezimeZaposlenog == "" || 				koeficijentZaposlenog == 0) {
 				System.out.println("Molimo Vas unesite ispravne podatke");
 			}
-			
+
 			radnik.postaviIme(imeZaposlenog);
 			radnik.postaviPrezime(prezimeZaposlenog);
-			radnik.postaviKoeficijent(koeficijentZaposlenog);			
-			
-		} while (imeZaposlenog == "" || prezimeZaposlenog == "" ||                                       			     koeficijentZaposlenog == 0);
+			radnik.postaviKoeficijent(koeficijentZaposlenog);
+
+		} while (imeZaposlenog == "" || prezimeZaposlenog == "" || 				koeficijentZaposlenog == 0);
 
 		radnik.racunanjePlate();
 
