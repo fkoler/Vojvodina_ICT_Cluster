@@ -28,7 +28,7 @@ public class Racunar {
 	}
 
 	public double izracunajIndexPerformansi() {
-		indexPerformansi = 10 * radniTakt + kapacitetMemorije;
+		this.indexPerformansi = 10 * radniTakt + kapacitetMemorije;
 		return indexPerformansi;
 	}
 

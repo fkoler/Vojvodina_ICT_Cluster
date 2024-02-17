@@ -3,15 +3,15 @@ package PorukaPrivate;
 public class Poruka {
 	private String tekst;
 
-	public void postaviTekst(String tekst) {
+	public void setTekst(String tekst) {
 		this.tekst = tekst;
 	}
 
-	private String pribaviTekst() {
+	private String getTekst() {
 		return this.tekst;
 	}
 
-	public void prikaziPoruku() {
-		System.out.println(pribaviTekst());
+	public void showPoruku() {
+		System.out.println(this.getTekst());
 	}
 }

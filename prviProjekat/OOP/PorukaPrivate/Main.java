@@ -6,8 +6,8 @@ public class Main {
 		
 		Poruka p = new Poruka();
 		
-		// p.tekst = "Zdravo svete!“; greska!!!		
-		p.postaviTekst("Zdravo OOP svete!");
-		p.prikaziPoruku();
+		// p.tekst = "Zdravo svete!“; greska!	
+		p.setTekst("Zdravo OOP svete!");
+		p.showPoruku();
 	}
 }
