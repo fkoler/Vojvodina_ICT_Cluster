@@ -73,19 +73,19 @@ public class Vozila {
 	}
 
 	public double racunajVrednost() {
-		this.cena = maksBrzina * snaga / (2021 - godiste);
+		this.cena = this.getMaksBrzinu() * this.getSnagu() / (2021 - this.getGodiste());
 		return cena;
 	}
 
 	void stampajVrednost() {
-		System.out.printf("Automobil marke: %s, tip: %s, registarskih oznaka: %s, godiste: %d, maksimalne brzine: %dkm/h, snage: %dkW,  cena je: %.2f \u20ac \n", this.getMarku(), this.getTip(), this.getRegistraciju(), this.getGodiste(), this.getMaksBrzinu(), this.getSnagu() , this.racunajVrednost());
+		System.out.printf("Automobil marke: %s, tipa: %s, registarskih oznaka: %s, godiste: %d, maksimalne brzine: %dkm/h, snage: %dkW,  cena je: %.2f \u20ac \n", this.getMarku(), this.getTip(), this.getRegistraciju(), this.getGodiste(), this.getMaksBrzinu(), this.getSnagu() , this.racunajVrednost());
 	}
 
 	void uporediVrednost(Vozila vozilo) {
 		if (this.cena < vozilo.cena) {
-			System.out.printf("Vozilo <%s> je jeftinije od vozila <%s>\n", this.marka, vozilo.marka);
+			System.out.printf("Vozilo <%s> je jeftinije od vozila <%s>\n", this.getMarku(), vozilo.getMarku());
 		} else if (this.cena > vozilo.cena) {
-			System.out.printf("Vozilo <%s> je skuplje od vozila <%s>\n", this.marka, vozilo.marka);
+			System.out.printf("Vozilo <%s> je skuplje od vozila <%s>\n",this.getMarku(), vozilo.getMarku());
 		} else {
 			System.out.println("Cene ovih vozila su iste");
 		}

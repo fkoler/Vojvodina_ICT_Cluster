@@ -3,36 +3,47 @@ package ZaposleniThis;
 public class Zaposleni {
 
 	private String ime, prezime;
-	private int koefRadnogMesta, plata;
-	private int faktor = 3600;
-	
-	Zaposleni(){}
+	private double koefRadnogMesta, plata;
 
-	Zaposleni(String ime, String prezime, int koefRadnogMesta) {		
+	Zaposleni() {}
+
+	Zaposleni(String ime, String prezime, double koefRadnogMesta) {
 		this.setIme(ime);
 		this.setPrezime(prezime);
 		this.setKoeficijent(koefRadnogMesta);
 	}
-	
-	public void setIme(String ime) {		
+
+	public void setIme(String ime) {
 		this.ime = ime;
 	}
 
-	public void setPrezime(String prezime) {		
+	public String getIme() {
+		return this.ime;
+	}
+
+	public void setPrezime(String prezime) {
 		this.prezime = prezime;
 	}
 
-	public void setKoeficijent(int koefRadnogMesta) {		
+	public String getPrezime() {
+		return this.prezime;
+	}
+
+	public void setKoeficijent(double koefRadnogMesta) {
 		this.koefRadnogMesta = koefRadnogMesta;
 	}
+
+	public double getKoeficijent() {
+		return this.koefRadnogMesta;
+	}
 	
-	public void racunanjePlate() {
-		plata =  faktor * this.koefRadnogMesta;
+	public void racunanjePlate(int brojDana) {
+		this.plata = brojDana * this.koefRadnogMesta * 100;
 	}
 
 	public void ispisPlate() {
-		System.out.println("Zaposleni: " + ime + " " + prezime);
-		System.out.println("Koeficijent zaposlenog: " + koefRadnogMesta);
-		System.out.println("Plata: " + plata);
+		System.out.printf("Zaposleni: %s %s \n", getIme(), getPrezime());
+		System.out.printf("Koeficijent zaposlenog: %.2f \n", getKoeficijent());
+		System.out.printf("Plata: %.2f \n", plata);
 	}
 }
