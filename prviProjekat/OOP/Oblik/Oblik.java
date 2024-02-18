@@ -62,6 +62,10 @@ public class Oblik {
 	public void setPovrsina(double povrsina) {
 		this.povrsina = povrsina;
 	}
+	
+	public void promeniBoju(String boja) {
+		this.setBoja(boja);
+	}	
 
 	public void showOblik() {
 		System.out.printf("Boja: %s, Tip: %s, Broj Strana: %d", this.getBoja(), this.getTip(), this.getBrojStrana());

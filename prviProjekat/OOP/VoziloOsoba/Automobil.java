@@ -22,7 +22,7 @@ public class Automobil extends Vozilo {
 	public void stampajPodatke() {
 		System.out.println(this.getMarka() + " " + this.getTip() 
 				   + " " + this.getGodiste() + " " + this.getRegistracija()
-				   + " " + this.getBrojVrata() + " " + vlasnik.getIme() + " "
-				   + vlasnik.getPrezime());
+				   + " " + this.getBrojVrata() + " " + vlasnik.getIme() 
+				   + " " + vlasnik.getPrezime());
 	}
 }

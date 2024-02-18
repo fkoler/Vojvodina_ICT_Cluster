@@ -2,8 +2,9 @@ package VoziloOsoba;
 
 public class Kamion extends Vozilo {
 	private int brojOsovina;
-	
-	Kamion(){}
+
+	Kamion() {
+	}
 
 	Kamion(String marka, String tip, String registracija, int godiste, Osoba vlasnik, int brojOsovina) {
 		super(marka, tip, registracija, godiste, vlasnik);
@@ -19,9 +20,9 @@ public class Kamion extends Vozilo {
 	}
 
 	public void stampajPodatke() {
-		System.out.println(this.getMarka() + " " + this.getTip() +
-				" " + this.getGodiste() + " " + this.getRegistracija() + 
-				" " + this.getBrojOsovina() + " " + vlasnik.getIme() + 
-				" " + vlasnik.getPrezime());
+		System.out.println(this.getMarka() + " " + this.getTip() 
+				   + " " + this.getGodiste() + " " + this.getRegistracija()
+				   + " " + this.getBrojOsovina() + " " + vlasnik.getIme() 
+				   + " " + vlasnik.getPrezime());
 	}
 }
