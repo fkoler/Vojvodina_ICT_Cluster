@@ -1,18 +1,29 @@
 package VoziloOsoba;
 
 public class Kamion extends Vozilo {
+	
 	private int brojOsovina;
 
-	Kamion() {
-	}
+	public Kamion() {}
 
-	Kamion(String marka, String tip, String registracija, int godiste, Osoba vlasnik, int brojOsovina) {
-		super(marka, tip, registracija, godiste, vlasnik);
-		this.brojOsovina = brojOsovina;
+	public Kamion(
+			String marka,
+			String tip,
+			boolean radi,
+			String tipMotora,
+			int snaga,
+			int kubikaza,
+			String registracija, 
+			int godiste,
+			Osoba vlasnik, 
+			int brojOsovina
+			) {
+		super(marka, tip, radi, tipMotora, snaga, kubikaza, registracija, godiste, vlasnik);
+		this.setBrojOsovina(brojOsovina);
 	}
 
 	public int getBrojOsovina() {
-		return brojOsovina;
+		return this.brojOsovina;
 	}
 
 	public void setBrojOsovina(int brojOsovina) {

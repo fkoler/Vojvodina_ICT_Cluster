@@ -2,44 +2,44 @@ package Osoba;
 
 public class Osoba {
 
-	protected String ime;
-	protected String prezime;
+	protected String ime; 		
+	protected String prezime;   
 	protected int starost;
-	protected double koeficijent;
-	protected double plata;
-
-	Osoba() {}
-
-	Osoba(String ime, String prezime, int starost) {
-		this.ime = ime;
-		this.prezime = prezime;
-		this.starost = starost;
+	
+	public Osoba() {}
+	
+	public Osoba(String ime, String prezime, int starost){
+		this.setIme(ime);
+		this.setPrezime(prezime);
+		this.setStarost(starost); 
 	}
 	
-	public String getIme() {
+	protected String getIme() {
 		return this.ime;
 	}
 	
-	public String getPrezime() {
+	protected void setIme(String ime) {
+		this.ime = ime;
+	}
+	
+	protected String getPrezime() {
 		return this.prezime;
 	}
 	
-	public int getStarost() {
+	protected void setPrezime(String prezime) {
+		this.prezime = prezime;
+	}
+	
+	protected int getStarost() {
 		return this.starost;
 	}
 	
-	public double pribaviKoefRadnogMesta() {
-		return this.koeficijent;
+	protected void setStarost(int starost) {
+		this.starost = starost;
 	}
 	
-	public double pribaviPlatu() {
-		return this.plata;
+	protected void predstaviSe() {
+		System.out.println("Ime: " + this.getIme() + " Prezime: " + this.getPrezime() + 
+				           " Starost: " + this.getStarost() + " godina");
 	}
-	
-	public void predstaviSe() {
-		System.out.println("Ime: " + this.getIme()
-		+ " Prezime: " + this.getPrezime()
-		+ " Starost: " + this.getStarost()
-		+ " godina");
-		}
 }

@@ -4,15 +4,25 @@ public class Motocikl extends Vozilo {
 	
 	private boolean registrovan;
 	
-	Motocikl(){}
+	public Motocikl(){}
 
-	Motocikl(String marka, String tip, String registracija, int godiste, Osoba vlasnik, boolean registrovan) {
-		super(marka, tip, registracija, godiste, vlasnik);
-		this.registrovan = registrovan;
+	public Motocikl(
+			String marka,
+			String tip,
+			boolean radi,
+			String tipMotora,
+			int snaga, int kubikaza,
+			String registracija,
+			int godiste, 
+			Osoba vlasnik, 
+			boolean registrovan
+			) {
+		super(marka, tip, radi, tipMotora, snaga, kubikaza, registracija, godiste, vlasnik);
+		this.setRegistrovan(registrovan);
 	}
 
-	public boolean isRegistrovan() {
-		return registrovan;
+	public boolean getRegistrovan() {
+		return this.registrovan;
 	}
 
 	public void setRegistrovan(boolean registrovan) {
@@ -21,8 +31,8 @@ public class Motocikl extends Vozilo {
 
 	public void stampajPodatke() {
 		System.out.println(this.getMarka() + " " + this.getTip() 
-				   + " " + this.getGodiste() + " " + 					this.getRegistracija()
-				   + " " + this.isRegistrovan() + " " + vlasnik.getIme() 
+				   + " " + this.getGodiste() + " " + this.getRegistracija()
+				   + " " + this.getRegistrovan() + " " + vlasnik.getIme() 
 				   + " " + vlasnik.getPrezime());
 	}
 }

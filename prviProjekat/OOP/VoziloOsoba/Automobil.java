@@ -1,18 +1,29 @@
 package VoziloOsoba;
 
 public class Automobil extends Vozilo {
+	
 	private int brojVrata;
 
-	Automobil() {
-	}
+	public Automobil() {}
 
-	Automobil(String marka, String tip, String registracija, int godiste, Osoba vlasnik, int brojVrata) {
-		super(marka, tip, registracija, godiste, vlasnik);
-		this.brojVrata = brojVrata;
+	public Automobil(
+			String marka,
+			String tip,
+			boolean radi,
+			String tipMotora, 
+			int snaga,
+			int kubikaza,
+			String registracija,
+			int godiste, 
+			Osoba vlasnik,
+			int brojVrata
+			) {
+		super(marka, tip, radi, tipMotora, snaga, kubikaza, registracija, godiste, vlasnik);
+		this.setBrojVrata(brojVrata);
 	}
 
 	public int getBrojVrata() {
-		return brojVrata;
+		return this.brojVrata;
 	}
 
 	public void setBrojVrata(int brojVrata) {

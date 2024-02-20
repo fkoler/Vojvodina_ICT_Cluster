@@ -1,21 +1,41 @@
 package VoziloOsoba;
 
-public class Vozilo {
+public class Vozilo{
 	
+	protected Motor pogonskiAgregat;
 	protected String marka;
 	protected String tip;
 	protected String registracija;
 	protected int godiste;
 	protected Osoba vlasnik;
 	
-	Vozilo(){}
+	public Vozilo(){}
 
-	Vozilo(String marka, String tip, String registracija, int godiste, Osoba vlasnik) {
-		this.marka = marka;
-		this.tip = tip;
-		this.registracija = registracija;
-		this.godiste = godiste;
-		this.vlasnik = vlasnik;
+	public Vozilo(
+			String marka,
+			String tip,
+			boolean radi,
+			String tipMotora,
+			int snaga,
+			int kubikaza,
+			String registracija,
+			int godiste,
+			Osoba vlasnik
+			) {
+		this.setPogonskiAgregat(new Motor(radi, tipMotora, snaga, kubikaza));
+		this.setMarka(marka);
+		this.setTip(tip);
+		this.setRegistracija(registracija);
+		this.setGodiste(godiste);
+		this.setVlasnik(vlasnik);
+	}
+	
+	public Motor getPogonskiAgregat() {
+		return pogonskiAgregat;
+	}
+	
+	public void setPogonskiAgregat(Motor pogonskiAgregat) {
+		this.pogonskiAgregat = pogonskiAgregat;
 	}
 
 	public String getMarka() {
@@ -58,11 +78,11 @@ public class Vozilo {
 		this.vlasnik = vlasnik;
 	}
 
-	protected void prenosVlasnistva(Osoba noviVlasnik) {
+	public void prenosVlasnistva(Osoba noviVlasnik) {
 		this.vlasnik = noviVlasnik;
 	}	
 
-	protected void stampajPodatke() {
+	public void stampajPodatke() {
 		System.out.println(getMarka() + " " + this.getTip() + " " 
 									  + this.getGodiste() + " " + this.getRegistracija() + " " 
 									  + this.vlasnik.getIme() + " " 

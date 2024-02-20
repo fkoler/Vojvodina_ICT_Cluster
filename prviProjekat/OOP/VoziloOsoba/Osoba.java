@@ -1,37 +1,46 @@
 package VoziloOsoba;
 
 public class Osoba {
-	
+
 	protected String ime;
 	protected String prezime;
 	protected int starost;
-	
-	
 
-	Osoba() {}
-
-	Osoba(String ime, String prezime, int starost) {
-		this.ime = ime;
-		this.prezime = prezime;
-		this.starost = starost;
+	public Osoba() {
 	}
-	
-	public String getIme() {
+
+	public Osoba(String ime, String prezime, int starost) {
+		this.setIme(ime);
+		this.setPrezime(prezime);
+		this.setStarost(starost);
+	}
+
+	protected String getIme() {
 		return this.ime;
 	}
-	
-	public String getPrezime() {
+
+	protected void setIme(String ime) {
+		this.ime = ime;
+	}
+
+	protected String getPrezime() {
 		return this.prezime;
 	}
-	
-	public int getStarost() {
+
+	protected void setPrezime(String prezime) {
+		this.prezime = prezime;
+	}
+
+	protected int getStarost() {
 		return this.starost;
 	}
-	
-	public void predstaviSe() {
-		System.out.println("Ime: " + this.getIme()
-		+ " Prezime: " + this.getPrezime()
-		+ " Starost: " + this.getStarost()
-		+ " godina");
-		}
+
+	protected void setStarost(int starost) {
+		this.starost = starost;
+	}
+
+	protected void predstaviSe() {
+		System.out.printf("\nIme: <%s>, Prezime: <%s>, Starost: <%d> godina \n",
+					   this.getIme(), this.getPrezime(), this.getStarost());
+	}
 }

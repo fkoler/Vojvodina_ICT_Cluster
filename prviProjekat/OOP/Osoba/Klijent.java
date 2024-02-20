@@ -2,51 +2,77 @@ package Osoba;
 
 public class Klijent extends Osoba {
 
-	private int jmbg;
+	private String jmbg;
 	private String adresa;
 	private double stanjeRacuna;
 
-	Klijent() {
-	}
+	public Klijent() {}
 
-	Klijent(String ime, String prezime, int starost, int jmbg, String adresa, double stanjeRacuna) {
+	public Klijent(
+			String ime,
+			String prezime,
+			int starost, 
+			String jmbg, 
+			String adresa,
+			double stanjeRacuna
+			) {
 		super(ime, prezime, starost);
+		this.setJmbg(jmbg);
+		this.setAdresu(adresa);
+		this.setStanjeRacuna(stanjeRacuna);
+	}
+
+	public void setJmbg(String jmbg) {
 		this.jmbg = jmbg;
-		this.adresa = adresa;
-		this.stanjeRacuna = stanjeRacuna;
+		;
 	}
 
-	public int getJmbg() {
-		return jmbg;
+	public String getJmbg() {
+		return this.jmbg;
 	}
 
-	public void setJmbg(int jmbg) {
-		this.jmbg = jmbg;
-	}
-
-	public String getAdresa() {
-		return adresa;
-	}
-
-	public void setAdresa(String adresa) {
+	public void setAdresu(String adresa) {
 		this.adresa = adresa;
 	}
 
-	public double getStanjeRacuna() {
-		return stanjeRacuna;
+	public String getAdresu() {
+		return this.adresa;
 	}
 
 	public void setStanjeRacuna(double stanjeRacuna) {
 		this.stanjeRacuna = stanjeRacuna;
 	}
-	
-	public void moneyTransfer (double k1, double k2) {
-		
+
+	public double getStanjeRacuna() {
+		return this.stanjeRacuna;
 	}
 
-	public void ispisiKlijenta() {
-		System.out.println("Ime: " + this.getIme() + ", Prezime: " + this.getPrezime() + ", Starost: " + this.getStarost()
-				+ ", JMBG:" + this.getJmbg() + ", adresa: " + this.getAdresa() + ", StanjeRacuna: "
+	private void promeniStanjeRacuna(double iznosTransakcije, boolean isplata) {
+		if (isplata) {
+			if (iznosTransakcije > this.getStanjeRacuna()) {
+				System.out.println("Transakcija nije moguca jer nema dovoljno sredstava na racunu!");
+				return;
+			} else {
+				this.setStanjeRacuna(this.getStanjeRacuna() - iznosTransakcije);
+			}
+		} else {
+			this.setStanjeRacuna(this.getStanjeRacuna() + iznosTransakcije);
+		}
+		return;
+	}
+
+	public void izvrsiTransakciju(Klijent k, int iznos, boolean isplata) {
+		if (isplata) {
+			this.promeniStanjeRacuna(iznos, true);
+			k.promeniStanjeRacuna(iznos, false);
+		} else {
+			this.promeniStanjeRacuna(iznos, false);
+			k.promeniStanjeRacuna(iznos, true);
+		}
+	}
+
+	public void stampajPodatke() {
+		System.out.println(getJmbg() + " " + this.getIme() + " " + this.getPrezime() + ", stanje racuna: "
 				+ this.getStanjeRacuna());
 	}
 }
