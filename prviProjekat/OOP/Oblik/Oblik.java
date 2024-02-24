@@ -8,8 +8,7 @@ public class Oblik {
 	protected double povrsina;
 	
 
-	public Oblik() {
-	}
+	public Oblik() {}
 
 	public Oblik(String boja, String tip) {
 		this.setBoja(boja);
@@ -68,6 +67,7 @@ public class Oblik {
 	}	
 
 	public void showOblik() {
-		System.out.printf("Boja: %s, Tip: %s, Broj Strana: %d", this.getBoja(), this.getTip(), this.getBrojStrana());
+		System.out.printf("Boja: %s, Tip: %s, Broj Strana: %d", 
+						this.getBoja(),	this.getTip(), this.getBrojStrana());
 	}
 }

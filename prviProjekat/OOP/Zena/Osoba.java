@@ -1,4 +1,4 @@
-package Osoba;
+package Zena;
 
 public class Osoba {
 
@@ -38,7 +38,7 @@ public class Osoba {
 		this.starost = starost;
 	}
 	
-	public void predstaviSe() {
+	void predstaviSe() {
 		System.out.println("Ime: " + this.getIme() + " Prezime: " + this.getPrezime() + 
 				           " Starost: " + this.getStarost() + " godina");
 	}

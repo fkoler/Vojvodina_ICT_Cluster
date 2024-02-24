@@ -4,8 +4,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Kvadrat nekiKvadrat = new Kvadrat("Purple", "Kvadrat", 10);
-		Krug nekiKrug = new Krug("Crimson", "Krug", 10);
+		Kvadrat nekiKvadrat = new Kvadrat("Purple", "Kvadrat", 12);
+		Krug nekiKrug = new Krug("Crimson", "Krug", 12);
 		
 		nekiKvadrat.obimKvadrata();
 		nekiKrug.obimKruga();
@@ -19,7 +19,7 @@ public class Main {
 		nekiKvadrat.promeniBoju("Violet");
 		nekiKrug.promeniBoju("DarkRed");
 		
-		System.out.println("\n\tPozvana metoda promeniBoju()\n");
+		System.out.println("\n\tpromeniBoju()\n");
 		
 		nekiKvadrat.showOblik();
 		nekiKrug.showOblik();

@@ -4,8 +4,7 @@ public class Kvadrat extends Oblik {
 
 	protected double duzinaStranice;
 
-	public Kvadrat() {
-	}
+	public Kvadrat() {}
 
 	public Kvadrat(String boja, String tip, double duzinaStranice) {
 		super(boja, tip);
@@ -29,6 +28,7 @@ public class Kvadrat extends Oblik {
 	}
 
 	public void showOblik() {
-		System.out.printf("Boja: <%s>, Tip: <%s>, Duzina stranice: <%.2f>, Obim: <%.2f> Povrsina: <%.2f> \n", this.getBoja(), this.getTip(), this.getDuzinaStranice(), this.getObim(), this.getPovrsina());
+		System.out.printf(
+	"Boja: <%s>, Tip: <%s>, Duzina stranice: <%.2f>, Obim: <%.2f> Povrsina: <%.2f> \n", 	this.getBoja(), this.getTip(), this.getDuzinaStranice(), this.getObim(), this.getPovrsina());
 	}
 }

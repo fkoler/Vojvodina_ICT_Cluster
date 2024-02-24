@@ -4,8 +4,7 @@ public class Krug extends Oblik {
 
 	protected double poluprecnik;
 
-	Krug() {
-	}
+	Krug() {}
 
 	Krug(String boja, String tip, double poluprecnik) {
 		super(boja, tip);
@@ -29,6 +28,8 @@ public class Krug extends Oblik {
 	}
 
 	public void showOblik() {
-		System.out.printf("Boja: <%s>, Tip: <%s>, Poluprecnik: <%.2f> Obim: <%.2f>, Povrsina: <%.2f> \n", this.getBoja(),	this.getTip(), this.getPoluprecnik(), this.getObim(), this.getPovrsina());
+		System.out.printf(
+	"Boja: <%s>, Tip: <%s>, Poluprecnik: <%.2f> Obim: <%.2f>, Povrsina: <%.2f> \n",
+	this.getBoja(),	this.getTip(), this.getPoluprecnik(), this.getObim(), this.getPovrsina());
 	}
 }

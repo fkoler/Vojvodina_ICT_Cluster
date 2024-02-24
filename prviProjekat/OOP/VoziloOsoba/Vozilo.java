@@ -83,9 +83,10 @@ public class Vozilo{
 	}	
 
 	public void stampajPodatke() {
-		System.out.println(getMarka() + " " + this.getTip() + " " 
-									  + this.getGodiste() + " " + this.getRegistracija() + " " 
-									  + this.vlasnik.getIme() + " " 
-									  + this.vlasnik.getPrezime());
+		System.out.println(
+				getMarka() + " " + this.getTip() + " " 
+				+ this.getGodiste() + " " + this.getRegistracija()
+				+ " " + this.vlasnik.getIme() + " " 
+				+ this.vlasnik.getPrezime());
 		}
 	}

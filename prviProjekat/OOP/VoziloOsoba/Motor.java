@@ -62,7 +62,7 @@ public class Motor {
 	}
 	
 	public void stampajPodatke() {
-		System.out.println("Informacije o motoru:");
-		System.out.printf("\nUkljucen: <%b>, Tip: <%s>, Snaga: <%d>,  Kubikaza: <%d>", this.getRadi(), this.getTip(), this.getSnaga(), this.getKubikaza());
+		System.out.println("\nInformacije o motoru:");
+		System.out.printf("Ukljucen: <%b>, Tip: <%s>, Snaga: <%d>,  Kubikaza: <%d> \n\n", 		this.getRadi(), this.getTip(), this.getSnaga(), this.getKubikaza());
 	}
 }

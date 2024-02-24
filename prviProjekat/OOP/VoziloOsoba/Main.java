@@ -11,7 +11,7 @@ public class Main {
 
 		Automobil a = new Automobil("Opel", "Corsa", false, "benzin", 55, 1199, "NS021IT", 2004, o1, 5);
 		Kamion k = new Kamion("Volvo", "FH", false, "dizel", 800, 5500, "NS021RS", 2016, o1, 3);
-		Motocikl m = new Motocikl("Honda", "Rebel", false, "benzin", 22, 250, "ZA018RS", 1998, o1, false);
+		Motocikl m = new Motocikl("Honda", "Rebel", true, "benzin", 22, 250, "ZA018RS", 1998, o1, false);
 
 		v = a;
 
@@ -28,8 +28,10 @@ public class Main {
 
 		a.stampajPodatke();
 		k.stampajPodatke();
-		m.stampajPodatke();
+		m.stampajPodatke();		
 
 		a.pogonskiAgregat.stampajPodatke();
+		k.pogonskiAgregat.stampajPodatke();
+		m.pogonskiAgregat.stampajPodatke();
 	}
 }
