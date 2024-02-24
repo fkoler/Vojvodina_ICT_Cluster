@@ -8,7 +8,11 @@ public class Osoba {
 	
 	public Osoba() {}
 	
-	public Osoba(String ime, String prezime, int starost){
+	public Osoba(
+			String ime,
+			String prezime,
+			int starost
+			){
 		this.setIme(ime);
 		this.setPrezime(prezime);
 		this.setStarost(starost); 

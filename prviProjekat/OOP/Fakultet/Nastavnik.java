@@ -1,4 +1,4 @@
-package NastavniciIOstali;
+package Fakultet;
 
 /*Klasa Nastavnik ima dodatne atribute zvanje (tipa String) i brojSCIRadova (tipa int),
  * realizovati metodu predstaviSe i racunajPlatu

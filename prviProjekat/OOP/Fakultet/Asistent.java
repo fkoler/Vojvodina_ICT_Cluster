@@ -1,4 +1,4 @@
-package NastavniciIOstali;
+package Fakultet;
 
 public class Asistent extends Zaposleni {
 	

@@ -1,4 +1,4 @@
-package NastavniciIOstali;
+package Fakultet;
 
 public class Zaposleni extends Osoba {
 	protected double koefRadnogMesta;
@@ -6,7 +6,12 @@ public class Zaposleni extends Osoba {
 	
 	public Zaposleni() {}
 
-	public Zaposleni(String ime, String prezime, int starost, double koefRadnogMesta) {
+	public Zaposleni(
+			String ime,
+			String prezime,
+			int starost,
+			double koefRadnogMesta
+			) {
 		super(ime, prezime, starost);
 		this.setKoefRadnogMesta(koefRadnogMesta);
 		this.setPlatu(plata);
