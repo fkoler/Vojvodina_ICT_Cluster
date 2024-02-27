@@ -1,4 +1,4 @@
-package Zena;
+package FakultetInterface;
 
 public class Osoba {
 
@@ -8,7 +8,11 @@ public class Osoba {
 	
 	public Osoba() {}
 	
-	public Osoba(String ime, String prezime, int starost){
+	public Osoba(
+			String ime,
+			String prezime,
+			int starost
+			){
 		this.setIme(ime);
 		this.setPrezime(prezime);
 		this.setStarost(starost); 
@@ -38,10 +42,10 @@ public class Osoba {
 		this.starost = starost;
 	}
 	
-	void predstaviSe() {
+	protected void predstaviSe() {
 		System.out.println(
-				"Ime: " + this.getIme() + 
-				" Prezime: " + this.getPrezime() + 
-				" Starost: " + this.getStarost() + " godina");
+			"Ime: " + this.getIme() + 
+			" Prezime: " + this.getPrezime() + 
+			" Starost: " + this.getStarost() + " godina");
 	}
 }

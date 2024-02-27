@@ -25,9 +25,10 @@ public class Zena extends Osoba {
 	}
 	
 	void predstaviSe() {
-		System.out.println("Ime: " + getIme() +
-		" Prezime: " + getPrezime() +
-		" Devojacko prezime: " +
-		pribaviDevojackoPrezime());
+		System.out.println(
+			"Ime: " + getIme() +
+			" Prezime: " + getPrezime() +
+			" Devojacko prezime: " + pribaviDevojackoPrezime() +
+			" Starost: " + this.getStarost() + " godina");
 	}
 }
