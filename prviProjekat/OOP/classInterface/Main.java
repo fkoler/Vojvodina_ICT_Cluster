@@ -1,6 +1,7 @@
 package classInterface;
 
 public class Main {
+	
     public static void main(String[] args) {
     	
         Bazna objekat1 = new Izvedena();

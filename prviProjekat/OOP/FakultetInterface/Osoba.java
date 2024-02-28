@@ -42,7 +42,7 @@ public class Osoba {
 		this.starost = starost;
 	}
 	
-	protected void predstaviSe() {
+	public void predstaviSe() {
 		System.out.println(
 			"Ime: " + this.getIme() + 
 			" Prezime: " + this.getPrezime() + 

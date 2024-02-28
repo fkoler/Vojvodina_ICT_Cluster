@@ -1,6 +1,6 @@
 package FakultetInterface;
 
-public class Asistent extends Zaposleni implements IPlata{
+public class Asistent extends Zaposleni {
 
 	private String mentor;
 	private int godinaDoktorskihStudija;
@@ -36,22 +36,22 @@ public class Asistent extends Zaposleni implements IPlata{
 		this.godinaDoktorskihStudija = godinaDoktorskihStudija;
 	}
 	
-	public void racunajPlatu() {
-		this.setPlatu(40000 + (this.getGodinaDoktorskihStudija() * 3000));		
+	public double racunajPlatu() {
+		return plata = (40000 + (this.getGodinaDoktorskihStudija() * 3000));		
 	}	
 	
 	public void stampajPlatu() {
 		System.out.printf(
 			"\nAsistent: %s %s, ima platu: %.2f \n", 
-			this.getIme(), this.getPrezime(), this.getPlatu());
+			this.getIme(), this.getPrezime(), racunajPlatu());
 	}
 
-	protected void predstaviSe() {
+	public void predstaviSe() {
 		System.out.println(
 			"Ime: " + getIme() + 
-			" Prezime: " + getPrezime() + 
-			" Starost: " + getStarost() + 
-			" Godina studija: " + this.getGodinaDoktorskihStudija() +
-			" Mentor: " + this.getMentor());
+			", Prezime: " + getPrezime() + 
+			", Starost: " + getStarost() + 
+			", Godina studija: " + this.getGodinaDoktorskihStudija() +
+			", Mentor: " + this.getMentor());
 	}	
 }

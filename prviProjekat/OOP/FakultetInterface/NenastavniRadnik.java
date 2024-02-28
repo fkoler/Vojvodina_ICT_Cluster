@@ -1,6 +1,6 @@
 package FakultetInterface;
 
-public class NenastavniRadnik extends Zaposleni implements IPlata {
+public class NenastavniRadnik extends Zaposleni {
 	
 	private String radnoMesto;
 	private int godineStaza;
@@ -36,22 +36,22 @@ public class NenastavniRadnik extends Zaposleni implements IPlata {
 		this.godineStaza = godineStaza;
 	}	
 	
-	public void racunajPlatu() {		
-		this.setPlatu(30000 + (this.getGodineStaza() * 500));
+	public double racunajPlatu() {		
+		return plata = (30000 + (this.getGodineStaza() * 500));
 	}
 	
 	public void stampajPlatu() {
 		System.out.printf(
 			"\nNenastavni radnik: %s %s, ima platu: %.2f \n", this.getIme(), 
-			this.getPrezime(), this.getPlatu());
+			this.getPrezime(), racunajPlatu());
 	}
 
-	protected void predstaviSe() {
+	public void predstaviSe() {
 		System.out.println(
 				"Ime: " + getIme() + 
-				" Prezime: " + getPrezime() + 
-				" Starost: " + getStarost() + 
-				" Radno mesto: " + this.getRadnoMesto() + 
-				" Godine staža: " +this.getGodineStaza());
+				", Prezime: " + getPrezime() + 
+				", Starost: " + getStarost() + 
+				", Radno mesto: " + this.getRadnoMesto() + 
+				", Godine staža: " +this.getGodineStaza());
 	}
 }

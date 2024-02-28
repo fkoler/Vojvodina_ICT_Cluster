@@ -1,6 +1,6 @@
 package FakultetInterface;
 
-public class Zaposleni extends Osoba {
+public abstract class Zaposleni extends Osoba implements IPlata {
 	
 	protected double koefRadnogMesta;
 	protected double plata;
@@ -11,26 +11,30 @@ public class Zaposleni extends Osoba {
 			String ime,
 			String prezime,
 			int starost,
-			double koefRadnogMesta
+			double koefRadnogMesta			
 			) {
 		super(ime, prezime, starost);
 		this.setKoefRadnogMesta(koefRadnogMesta);
-		this.setPlatu(plata);
+		this.setPlata(plata);
 	}
+	
+	public abstract double racunajPlatu();
+	public abstract void stampajPlatu();
 
-	protected double getKoefRadnogMesta() {
+	public double getKoefRadnogMesta() {
 		return this.koefRadnogMesta;
 	}
 	
-	protected void setKoefRadnogMesta(double koefRadnogMesta) {
+	public void setKoefRadnogMesta(double koefRadnogMesta) {
 		this.koefRadnogMesta = koefRadnogMesta;
+	} 
+	
+
+	public double getPlata() {
+		return plata;
 	}
-    
-    protected void setPlatu(double brojDana){
-    	this.plata = this.getKoefRadnogMesta() * brojDana;
-    }
-    
-    protected double getPlatu() {
-    	return this.plata;
-    }
+
+	public void setPlata(double plata) {
+		this.plata = plata;
+	}	
 }
