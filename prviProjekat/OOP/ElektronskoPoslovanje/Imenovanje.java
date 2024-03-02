@@ -2,6 +2,6 @@ package ElektronskoPoslovanje;
 
 public interface Imenovanje {
 
-	String pribaviIme();
-
+	String getImeProdavnice();	
+	void setImeProdavnice(String ime);
 }

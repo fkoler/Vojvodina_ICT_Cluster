@@ -1,6 +1,6 @@
 package ElektronskoPoslovanje;
 
-public class Poslasticarnica extends Prodavnica implements Imenovanje {
+public class Poslasticarnica extends Prodavnica {
 	
 	protected String[] stavkaMenija = {
 			"Sladoled", "Torta", "Krofna", "Kafa", "Caj", "Limunada" 
@@ -8,29 +8,25 @@ public class Poslasticarnica extends Prodavnica implements Imenovanje {
 
 	public Poslasticarnica() {}
 
-	public Poslasticarnica(
-			String spisakKlijenata,
-			int maxBrojKlijenata, 
-			String imeKompanije
-			) {
-		super(maxBrojKlijenata, imeKompanije);
+	public Poslasticarnica(String imeProdavnice, int maxBrojKlijenata){
+		super(imeProdavnice, maxBrojKlijenata);
+	}
+	
+	public String[] getMeni() {
+		return stavkaMenija;
+	}
+
+	public void setMeni(String[] meni) {
+		this.stavkaMenija = meni;
 	}
 
 	public String[] uzmiInventar() {
 		return stavkaMenija;
 	}
-
+	
 	public void kupiInventar(String artikal) {
 		System.out.println(
-				"\nIz Poslasticarnice: " + this.pribaviIme() +
+				"\nIz Poslasticarnice: "+ this.getImeProdavnice() +
 				" ste narucili: " + artikal);
-	}
-
-	public String pribaviIme() {
-		return this.imeKompanije;
-	}	
-	
-	public void postaviIme(String ime) {
-		this.imeKompanije = ime;
 	}
 }

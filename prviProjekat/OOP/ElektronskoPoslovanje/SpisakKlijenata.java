@@ -33,7 +33,7 @@ public class SpisakKlijenata {
 	public void dodajKlijenta(String nazivKlijenta) {
 		if (this.trenutniBrojKlijenata < this.maxBrojKlijenata) {
 			this.nazivKlijenta[this.trenutniBrojKlijenata++] = nazivKlijenta;
-			System.out.println("Uspesno dodat klijent " + nazivKlijenta);
+			System.out.println("Uspesno dodat klijent: " + nazivKlijenta);
 		} else {
 			System.out.println("Nema vise mesta u spisku klijenata");
 		}

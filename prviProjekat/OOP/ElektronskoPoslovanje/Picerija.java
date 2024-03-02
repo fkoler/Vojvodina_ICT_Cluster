@@ -1,6 +1,6 @@
 package ElektronskoPoslovanje;
 
-public class Picerija extends Prodavnica implements Imenovanje {
+public class Picerija extends Prodavnica {
 	
 	protected String[] ponudaHrane = {
 			"Pica", "Pasta", "Salata", "Kalcona", "Sok", "Pivo" 
@@ -8,12 +8,8 @@ public class Picerija extends Prodavnica implements Imenovanje {
 	
 	public Picerija() {}
 	
-	public Picerija(
-			String spisakKlijenata,
-			int maxBrojKlijenata, 
-			String imeKompanije
-			) {
-		super(maxBrojKlijenata, imeKompanije);
+	public Picerija(String imeProdavnice, int maxBrojKlijenata){
+		super(imeProdavnice, maxBrojKlijenata);
 	}
 
 	public String[] uzmiInventar() {
@@ -22,15 +18,7 @@ public class Picerija extends Prodavnica implements Imenovanje {
 
 	public void kupiInventar(String artikal) {
 		System.out.println(
-				"\nIz Picerije: "+ this.pribaviIme() +
+				"\nIz Picerije: "+ this.getImeProdavnice() +
 				" ste narucili: " + artikal);
-	}
-	
-	public String pribaviIme() {
-		return this.imeKompanije;
-	}	
-	
-	public void postaviIme(String ime) {
-		this.imeKompanije = ime;
 	}
 }
