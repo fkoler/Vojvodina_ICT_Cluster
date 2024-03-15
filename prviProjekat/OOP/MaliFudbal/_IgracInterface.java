@@ -6,5 +6,7 @@ public interface _IgracInterface {
 
 	void obrisiIgraca(KlasaIgrac igrac);
 
-	KlasaIgrac pronadjiIgraca(String jmbg);
+	KlasaIgrac pronadjiIgracaPoJmbg(String jmbg);
+	
+	KlasaIgrac pronadjiIgracaPoImenu(String ime);
 }

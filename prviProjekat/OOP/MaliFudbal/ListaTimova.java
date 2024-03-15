@@ -27,7 +27,7 @@ public class ListaTimova implements _TimInterface{
     public void dodajTim(KlasaTim tim) {
         this.getTimovi().add(tim);
         System.out.printf(
-        		"Tim %s, iz %s, broj igraca %d, je dodat u listu \n",
+        		"Tim %s, iz %s, broj igraca %d, je dodat u listu \n\n",
         		tim.getIme(), tim.getGrad(), tim.getBrojIgraca()
         	);
     }
@@ -40,7 +40,7 @@ public class ListaTimova implements _TimInterface{
         	System.out.printf("Greska, tim: %s nije pronadjen na listi \n", imeTima);
         } else {
         	this.getTimovi().remove(tim);
-        	System.out.printf("Tim: %s je obrisan sa liste \n", imeTima);
+        	System.out.printf("Tim: %s je obrisan sa liste \n\n", imeTima);
         }
     }
 
@@ -50,11 +50,11 @@ public class ListaTimova implements _TimInterface{
        for(KlasaTim tim: timovi) {
     	   System.out.println("Proveravam tim: " + tim);
     	   if(tim.getIme().equals(ime)) {
-    		   System.out.println("Tim: " + ime + " je pronadjen.");
+    		   System.out.println("\nTim: " + ime + " je pronadjen.\n");
     		   return tim;
     	   }
        }
-       System.out.println("Tim: " + ime + "nije pronadjen.");
+       System.out.println("\nTim: " + ime + " nije pronadjen.");
        return null;
     }
     

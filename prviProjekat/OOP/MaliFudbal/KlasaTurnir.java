@@ -10,36 +10,40 @@ public class KlasaTurnir {
     private ListaIgraca listaIgraca;
     private ListaUtakmica listaUtakmica;
 
+    // Konstruktor
     public KlasaTurnir() {
         this.listaTimova = new ListaTimova();
         this.listaIgraca = new ListaIgraca();
         this.listaUtakmica = new ListaUtakmica();
     }
 
+    // Get metode
     public ListaTimova getListaTimova() {
 		return listaTimova;
 	}
-
+    
+    public ListaIgraca getListaIgraca() {
+		return listaIgraca;
+	}
+    
+    public ListaUtakmica getListaUtakmica() {
+		return listaUtakmica;
+	}
+    
+    // Set metode
 	public void setListaTimova(ListaTimova listaTimova) {
 		this.listaTimova = listaTimova;
 	}
-
-	public ListaIgraca getListaIgraca() {
-		return listaIgraca;
-	}
-
+	
 	public void setListaIgraca(ListaIgraca listaIgraca) {
 		this.listaIgraca = listaIgraca;
-	}
-
-	public ListaUtakmica getListaUtakmica() {
-		return listaUtakmica;
-	}
+	}	
 
 	public void setListaUtakmica(ListaUtakmica listaUtakmica) {
 		this.listaUtakmica = listaUtakmica;
 	}
 
+	// Metode za upravljanje timovima, igracima i utakmicama
 	public void upravljanjeTimovima(KlasaTim klasaTim) {
         listaTimova.dodajTim(klasaTim);
     }
@@ -52,7 +56,7 @@ public class KlasaTurnir {
         listaUtakmica.dodajUtakmicu(klasaUtakmica);
     }
 
- // Metoda za izračunavanje i ispis ukupnog fonda takmičenja i iznosa nagrada
+    // Metoda za izračunavanje i ispis ukupnog fonda takmičenja i iznosa nagrada
     public void izracunajFondINagrade(ListaTimova timovi) {
         ArrayList<KlasaTim> klasaTimovi = timovi.getTimovi();
         int brTimova = klasaTimovi.size();
@@ -75,10 +79,15 @@ public class KlasaTurnir {
         System.out.println("3. nagrada: " + trecaNagrada);
     }
 
+    // Metoda za upis podataka u datoteku
     public void upisPodatakaUDatoteku(String imeDatoteke) {
         try (FileWriter writer = new FileWriter(imeDatoteke)) {
             for (KlasaUtakmica klasaUtakmica : listaUtakmica.getUtakmice()) {
-                writer.write(klasaUtakmica.getPrviTim() + " vs " + klasaUtakmica.getDrugiTim() + ", Rezultat: " + klasaUtakmica.getRezultat() + "\n");
+                writer.write(
+                		klasaUtakmica.getPrviTim() + " vs " +
+                		klasaUtakmica.getDrugiTim() + ", Rezultat: " +
+                		klasaUtakmica.getRezultat() + "\n"
+                );
             }
         } catch (IOException e) {
             System.err.println("Greška prilikom upisa podataka u datoteku.");

@@ -7,7 +7,13 @@ public class KlasaTim {
 	private int brojIgraca;	
 
 	// Konstruktor
-	public KlasaTim(String ime, String grad, int brojIgraca) {
+	public KlasaTim() {}
+	
+	public KlasaTim(
+			String ime,
+			String grad,
+			int brojIgraca
+		) {
 		this.setIme(ime);
 		this.setGrad(grad);
 		this.setBrojIgraca(brojIgraca);
@@ -26,6 +32,7 @@ public class KlasaTim {
 		return brojIgraca;
 	}	
 
+	// Set metode
 	public void setIme(String ime) {
 		this.ime = ime;
 	}
@@ -41,6 +48,9 @@ public class KlasaTim {
 	// Metoda za prikaz informacija o timu
 	@Override
 	public String toString() {
-		return "Tim: " + ime + ", Grad: " + grad + ", Broj igrača: " + brojIgraca;
+		return String.format(
+				"Tim: " + ime + ", Grad: " + grad 
+				+ ", Broj igrača: " + brojIgraca
+		);
 	}
 }

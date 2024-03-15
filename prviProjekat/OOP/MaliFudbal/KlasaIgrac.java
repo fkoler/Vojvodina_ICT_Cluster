@@ -5,12 +5,17 @@ public class KlasaIgrac {
 	private String ime;
 	private String prezime;
 	private String jmbg;
-	private String imeTima;
-	
-	public KlasaIgrac() {}
+	private String imeTima;	
 
 	// Konstruktor
-	public KlasaIgrac(String ime, String prezime, String jmbg, String imeTima) {
+	public KlasaIgrac() {}
+	
+	public KlasaIgrac(
+			String ime,
+			String prezime,
+			String jmbg,
+			String imeTima
+		) {
 		this.setIme(ime);
 		this.setPrezime(prezime);
 		this.setJmbg(jmbg);
@@ -34,6 +39,7 @@ public class KlasaIgrac {
 		return imeTima;
 	}
 
+	// Set metode
 	public void setIme(String ime) {
 		this.ime = ime;
 	}
@@ -53,6 +59,9 @@ public class KlasaIgrac {
 	// Metoda za prikaz informacija o igraču
 	@Override
 	public String toString() {
-	    return String.format("Igrač: %s %s, JMBG: %s, Tim: %s", ime, prezime, jmbg, imeTima);
+	    return String.format(
+	    		"Igrač: %s %s, JMBG: %s, Tim: %s",
+	    		ime, prezime, jmbg, imeTima
+	    );
 	}
 }
