@@ -1,0 +1,85 @@
+-1-
+
+SELECT P.NAZP AS "Naziv predmeta", 
+	SUM(PR.FOND) AS "Ukupan fond casova"
+FROM Predmet AS P
+JOIN Predaje AS PR ON P.SPR = PR.SPR
+GROUP BY P.NAZP
+ORDER BY P.NAZP;
+
+---------------------------------------------------
+-2-
+
+SELECT N.IMEN AS "Ime nastavnika", 
+    N.PREZN AS "Prezime nastavnika", 
+    COUNT(P.IDN) AS "Broj predmeta koje predaje"
+FROM Nastavnik AS N
+LEFT JOIN Predaje AS P ON N.IDN = P.IDN
+GROUP BY N.IMEN, N.PREZN
+ORDER BY N.IMEN;
+
+---------------------------------------------------
+-3-
+
+SELECT PR.NAZP AS "Naziv predmeta kojeg predaju tri nastavnika",
+    PR.SPR AS "Sifra predmeta"
+FROM Predmet AS PR
+JOIN Predaje AS PJ ON PR.SPR = PJ.SPR
+GROUP BY PR.NAZP, PR.SPR
+HAVING COUNT(DISTINCT PJ.IDN) = 3;
+
+---------------------------------------------------
+-4-
+
+SELECT P.NAZP AS "Naziv predmeta", 
+    SUM(PR.FOND) AS "Najveci fond casova"
+FROM Predmet AS P
+JOIN Predaje AS PR ON P.SPR = PR.SPR
+GROUP BY P.NAZP
+HAVING SUM(PR.FOND) = (
+    SELECT MAX(TotalFond)
+    FROM (
+        SELECT SUM(FOND) AS TotalFond
+        FROM Predaje
+        GROUP BY SPR
+    ) AS MaxFond
+);
+
+ili::vise od proseka svih predmeta:
+
+SELECT P.NAZP AS "Naziv predmeta", 
+    SUM(PR.FOND) AS "Najveci fond casova"
+FROM Predmet AS P
+JOIN Predaje AS PR ON P.SPR = PR.SPR
+GROUP BY P.NAZP
+HAVING SUM(PR.FOND) > (
+    SELECT AVG(TotalFond)
+    FROM (
+        SELECT SUM(FOND) AS TotalFond
+        FROM Predaje
+        GROUP BY SPR
+    ) AS AvgFond
+);
+
+---------------------------------------------------
+-5-
+
+SELECT K.IDK AS "ID Katedre", 
+	K.NAZK AS "Naziv Katedre", 
+	COUNT(N.IDN) AS "Broj nastavnika na katedri"
+FROM Katedra AS K
+LEFT JOIN Nastavnik AS N ON K.IDK = N.IDK
+GROUP BY K.IDK, K.NAZK;
+
+---------------------------------------------------
+-6-
+
+SELECT PR.NAZP AS "Naziv predmeta", 
+	COUNT(DISTINCT PJ.IDN) AS "Broj nastavnika"
+FROM Predmet AS PR
+JOIN Predaje AS PJ ON PR.SPR = PJ.SPR
+GROUP BY PR.NAZP
+HAVING COUNT(DISTINCT PJ.IDN) > 2;
+
+---------------------------------------------------
+Ferenc Koler @Brains24
