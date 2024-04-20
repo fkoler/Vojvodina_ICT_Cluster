@@ -1,0 +1,13 @@
+insert into projekcija values ('B1', 'F7', '2018-11-30',230);
+insert into projekcija values ('B3', 'F6', '2018-11-30',250);
+insert into projekcija values ('B4', 'F4', '2018-11-30',350);
+insert into projekcija values ('B5', 'F5', '2018-11-30',340);
+insert into projekcija values ('B3', 'F3', '2018-12-01',240);
+insert into projekcija values ('B4', 'F5', '2018-12-01',255);
+insert into projekcija values ('B5', 'F4', '2018-12-05',355);
+insert into projekcija values ('B2', 'F3', '2018-12-05',320);
+insert into projekcija values ('B1', 'F4', '2018-12-05',234);
+insert into projekcija values ('B2', 'F5', '2018-12-12',230);
+insert into projekcija values ('B1', 'F2', '2018-12-12',320);
+insert into projekcija values ('B1', 'F1', '2018-12-14',300);
+commit;
