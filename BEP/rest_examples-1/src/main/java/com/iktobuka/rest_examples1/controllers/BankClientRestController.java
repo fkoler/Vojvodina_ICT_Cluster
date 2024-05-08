@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.iktobuka.rest_examples1.entities.BankClientEntity;
@@ -64,6 +65,29 @@ public class BankClientRestController {
 			bc.setName(client.getName());
 			bc.setSurname(client.getSurname());
 			return bc;
+		} else {
+			return new BankClientEntity();
+		}
+	}
+
+	@RequestMapping(method = RequestMethod.DELETE, value = "/{clientId}")
+	public BankClientEntity deleteBankClient(@PathVariable String clientId) {
+
+		for (BankClientEntity bc : getDB()) {
+			if (bc.getId().equals(Integer.parseInt(clientId))) {
+				System.out.println("Client '" + bc.getName() + "' is successfully deleted");
+				getDB().remove(bc);
+			}
+		}
+
+		return new BankClientEntity();
+	}
+
+	@RequestMapping(method = RequestMethod.GET, value = "/client")
+	public BankClientEntity getByNameSurname(@RequestParam("name") String name,
+			@RequestParam("surname") String surname) {
+		if (name.equals("Frenk") && surname.equals("Speck")) {
+			return new BankClientEntity(1, "Frenk", "Speck", "frenk@frenk.io");
 		} else {
 			return new BankClientEntity();
 		}
