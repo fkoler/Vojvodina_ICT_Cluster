@@ -77,6 +77,7 @@ public class BankClientRestController {
 			if (bc.getId().equals(Integer.parseInt(clientId))) {
 				System.out.println("Client '" + bc.getName() + "' is successfully deleted");
 				getDB().remove(bc);
+				return bc;
 			}
 		}
 
