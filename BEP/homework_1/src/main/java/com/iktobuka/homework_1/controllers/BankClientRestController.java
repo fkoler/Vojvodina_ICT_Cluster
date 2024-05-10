@@ -47,7 +47,6 @@ public class BankClientRestController {
 	@RequestMapping(method = RequestMethod.GET, value = "/emails")
 	public List<String> getEmails() {
 		List<String> emails = new ArrayList<>();
-		List<BankClientEntity> clients = getDB();
 
 		for (BankClientEntity bc : clients) {
 			emails.add(bc.getEmail());
