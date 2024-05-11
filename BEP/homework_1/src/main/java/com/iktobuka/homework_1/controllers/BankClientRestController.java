@@ -4,7 +4,9 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -213,5 +215,43 @@ public class BankClientRestController {
 		}
 
 		return matchingClients;
+	}
+
+//	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@	
+
+	@RequestMapping(value = "greetings/{name}", method = RequestMethod.GET)
+	public String greetings(@PathVariable String name) {
+		return "Hello " + name + "!";
+	}
+
+	@RequestMapping(value = "arraySum/{n}", method = RequestMethod.GET)
+	public String getArraySum(@PathVariable int n) {
+		int[] arr = { 9, 2, 3, 7, 8, 1, 5, 0, 6, 4 };
+
+		int sum = 0;
+
+		for (int i = 0; i < n && i < arr.length; i++) {
+			sum += arr[i];
+		}
+
+		return "The sum of the first " + n + " numbers from the array is: " + sum;
+	}
+
+	private static final Map<String, String> dictionary = new HashMap<>();
+	static {
+		dictionary.put("Pas", "Dog");
+		dictionary.put("Pile", "Chicken");
+		dictionary.put("Dabar", "Beaver");
+	}
+
+	@RequestMapping(value = "dictionary/{requested_word}", method = RequestMethod.GET)
+	public Map<String, String> translate(@PathVariable String requested_word) {
+		String translation = dictionary.get(requested_word);
+
+		if (translation != null) {
+			return Map.of(requested_word, translation);
+		} else {
+			return Map.of("Word", requested_word + " not found in the dictionary.");
+		}
 	}
 }
