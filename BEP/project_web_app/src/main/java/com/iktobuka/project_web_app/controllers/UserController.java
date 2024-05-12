@@ -23,7 +23,7 @@ public class UserController {
 				UserRole.ROLE_CUSTOMER));
 		users.add(
 				new UserEntity(5, "Tony", "Iommi", "tonyiommi", "ironMan1970", "tony@iommi.io", UserRole.ROLE_SELLER));
-		users.add(new UserEntity(6, "Rob", "Halford", "robhalford", "breakingTheLaw1980", "rob@halford.io",
+		users.add(new UserEntity(6, "Til", "Lindemann", "tilLindemann", "duHast1995", "til@lindemann.io",
 				UserRole.ROLE_CUSTOMER));
 		users.add(new UserEntity(7, "Bruce", "Dickinson", "brucedickinson", "numberOfTheBeast1982",
 				"bruce@dickinson.io", UserRole.ROLE_CUSTOMER));

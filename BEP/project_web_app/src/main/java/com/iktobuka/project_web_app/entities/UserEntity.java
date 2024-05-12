@@ -15,8 +15,6 @@ public class UserEntity {
 	}
 
 	public UserEntity() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public UserEntity(int id, String firstName, String lastName, String username, String password, String email,
