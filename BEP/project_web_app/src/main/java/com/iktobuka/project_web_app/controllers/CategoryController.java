@@ -76,7 +76,6 @@ public class CategoryController {
 		if (existingCategory == null) {
 			return null;
 		}
-
 		existingCategory.setCategoryName(updatedCategory.getCategoryName());
 		existingCategory.setCategoryDescription(updatedCategory.getCategoryDescription());
 

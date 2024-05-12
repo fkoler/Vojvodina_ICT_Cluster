@@ -123,11 +123,10 @@ public class UserController {
 					user.setPassword(newPassword);
 
 					return user;
-				} else {
-					return null;
 				}
 			}
 		}
+		System.out.println("Operation failed");
 
 		return null;
 	}
@@ -143,8 +142,8 @@ public class UserController {
 				return user;
 			}
 		}
-
 		System.out.println("Operation failed");
+
 		return null;
 	}
 
