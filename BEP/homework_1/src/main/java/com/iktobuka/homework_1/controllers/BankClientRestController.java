@@ -98,12 +98,16 @@ public class BankClientRestController {
 			sortedNames.add(bc.getName());
 		}
 
-		if (order.toLowerCase().equals("asc")) {
+		switch (order.toLowerCase()) {
+		case "asc":
 			Collections.sort(sortedNames);
-		} else if (order.toLowerCase().equals("desc")) {
+			break;
+		case "desc":
 			Collections.sort(sortedNames, Collections.reverseOrder());
-		} else {
+			break;
+		default:
 			sortedNames = new ArrayList<>();
+			break;
 		}
 
 		return sortedNames;
@@ -244,14 +248,22 @@ public class BankClientRestController {
 		dictionary.put("Dabar", "Beaver");
 	}
 
-	@RequestMapping(value = "dictionary/{requested_word}", method = RequestMethod.GET)
+	@RequestMapping(value = "/dictionary/{requested_word}", method = RequestMethod.GET)
 	public Map<String, String> translate(@PathVariable String requested_word) {
-		String translation = dictionary.get(requested_word);
+		String requestedWordLowerCase = requested_word.toLowerCase();
+		String translation = null;
 
-		if (translation != null) {
-			return Map.of(requested_word, translation);
-		} else {
-			return Map.of("Word", requested_word + " not found in the dictionary.");
+		for (Map.Entry<String, String> entry : dictionary.entrySet()) {
+			if (entry.getKey().toLowerCase().equals(requestedWordLowerCase)) {
+				translation = entry.getValue();
+				break;
+			}
 		}
+
+		String formattedWord = requestedWordLowerCase.substring(0, 1).toUpperCase()
+				+ requestedWordLowerCase.substring(1);
+
+		return (translation != null) ? Map.of(formattedWord, translation)
+				: Map.of("Word", formattedWord + " not found in the dictionary.");
 	}
 }
