@@ -1,6 +1,10 @@
 package com.iktobuka.project_web_app.entities;
 
 public class UserEntity {
+	
+	public enum UserRole {
+		ROLE_CUSTOMER, ROLE_ADMIN, ROLE_SELLER
+	}
 
 	private int id;
 	private String firstName;
@@ -8,11 +12,7 @@ public class UserEntity {
 	private String username;
 	private String password;
 	private String email;
-	private UserRole userRole;
-
-	public enum UserRole {
-		ROLE_CUSTOMER, ROLE_ADMIN, ROLE_SELLER
-	}
+	private UserRole userRole;	
 
 	public UserEntity() {
 	}

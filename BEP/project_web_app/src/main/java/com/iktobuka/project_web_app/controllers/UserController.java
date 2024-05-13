@@ -59,7 +59,7 @@ public class UserController {
 
 	List<UserEntity> users = getDB();
 
-	@GetMapping("/")
+	@GetMapping
 	public List<UserEntity> getUsers() {
 		return users;
 	}

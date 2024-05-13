@@ -48,12 +48,12 @@ public class CategoryController {
 
 	List<CategoryEntity> categories = getDB();
 
-	@GetMapping("/")
+	@GetMapping
 	public List<CategoryEntity> getCategories() {
 		return categories;
 	}
 
-	@PostMapping("/")
+	@PostMapping
 	public CategoryEntity addCategory(@RequestBody CategoryEntity category) {
 		return category;
 	}
