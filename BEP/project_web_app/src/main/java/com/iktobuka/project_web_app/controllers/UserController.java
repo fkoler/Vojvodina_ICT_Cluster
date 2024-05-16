@@ -126,6 +126,7 @@ public class UserController {
 				}
 			}
 		}
+
 		System.out.println("Operation failed");
 
 		return null;
@@ -142,6 +143,7 @@ public class UserController {
 				return user;
 			}
 		}
+
 		System.out.println("Operation failed");
 
 		return null;
@@ -154,6 +156,7 @@ public class UserController {
 				return user;
 			}
 		}
+
 		System.out.println("User '" + username + "' doesn't exist");
 
 		return null;

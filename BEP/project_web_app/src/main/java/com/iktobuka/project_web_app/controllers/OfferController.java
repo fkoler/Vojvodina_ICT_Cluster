@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -109,6 +110,7 @@ public class OfferController {
 				return offer;
 			}
 		}
+
 		System.out.println("No offer with id " + id);
 
 		return null;
@@ -133,5 +135,56 @@ public class OfferController {
 		existingOffer.setBoughtOffers(updatedOffer.getBoughtOffers());
 
 		return existingOffer;
+	}
+
+	@DeleteMapping("/{id}")
+	public OfferEntity deleteOffer(@PathVariable int id) {
+		OfferEntity offerToDelete = findOfferById(id);
+
+		if (offerToDelete == null) {
+			return null;
+		}
+
+		offers.remove(offerToDelete);
+		System.out.println("Offer '" + offerToDelete.getOfferName() + "' successfully deleted");
+
+		return offerToDelete;
+	}
+
+	@GetMapping("/{id}")
+	public OfferEntity getOfferById(@PathVariable int id) {
+		return findOfferById(id);
+	}
+
+	@PutMapping("/changeOffer/{id}/status/{status}")
+	public OfferEntity changeOfferStatus(@PathVariable int id, @PathVariable OfferStatus status) {
+		OfferEntity existingOffer = findOfferById(id);
+
+		if (existingOffer == null) {
+			return null;
+		}
+
+		existingOffer.setOfferStatus(status);
+
+		return existingOffer;
+	}
+
+	@GetMapping("/findByPrice/{lowerPrice}/and/{upperPrice}")
+	public List<OfferEntity> findOffersByPriceRange(@PathVariable double lowerPrice, @PathVariable double upperPrice) {
+		List<OfferEntity> offersInRange = new ArrayList<>();
+		
+		if (lowerPrice > upperPrice) {
+			System.out.println("Please enter valid values");
+			
+			return null;
+		}
+
+		for (OfferEntity offer : offers) {
+			if (offer.getActionPrice() >= lowerPrice && offer.getActionPrice() <= upperPrice) {
+				offersInRange.add(offer);
+			} 
+		}
+
+		return offersInRange;
 	}
 }

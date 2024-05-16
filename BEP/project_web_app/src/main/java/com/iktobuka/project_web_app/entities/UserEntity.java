@@ -17,8 +17,15 @@ public class UserEntity {
 	public UserEntity() {
 	}
 
-	public UserEntity(int id, String firstName, String lastName, String username, String password, String email,
-			UserRole userRole) {
+	public UserEntity(
+			int id,
+			String firstName,
+			String lastName,
+			String username, 
+			String password,
+			String email,
+			UserRole userRole
+			) {
 		setId(id);
 		setFirstName(firstName);
 		setLastName(lastName);

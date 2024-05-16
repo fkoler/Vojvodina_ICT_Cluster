@@ -21,7 +21,7 @@
 -   Composition
 -   Polymorphism
 -   Abstract Classes and Interfaces
--   Working Environment and API
+-   Working Environment and Application Programming Interface (API)
 -   Accuracy and Robustness of OO Programs – Exception Handling
 -   Working with Streams and Files
 -   Java Platform
@@ -33,14 +33,19 @@
 
 -   ER Model
 -   Relational Database Language
--   Data Definition Language (DDL) of Relational DBMS
+-   Data Definition Language (DDL) of Relational Database Management System (DBMS)
 -   Data Manipulation Language (DML)
--   SQL Queries
+-   Structured Query Language (SQL) Queries
 -   Views in SQL Language
 
 ## 4. Architecture of Web Systems
 
 -   Principles of Client-Server Architecture
--   HTTP Protocol
--   REST Architecture
+-   Hypertext Transfer Protocol (HTTP)
+-   Representational State Transfer (REST) Architecture
 -   Spring and Functional Levels of Spring Applications
+-   Data layer
+-   Object-Relational Mapping (ORM)
+-   Hibernate
+-   Repositories in Spring
+-   Hibernate and Spring

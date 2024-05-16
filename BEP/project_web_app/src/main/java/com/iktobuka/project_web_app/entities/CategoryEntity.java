@@ -9,7 +9,11 @@ public class CategoryEntity {
 	public CategoryEntity() {
 	}
 
-	public CategoryEntity(int id, String categoryName, String categoryDescription) {
+	public CategoryEntity(
+			int id, 
+			String categoryName, 
+			String categoryDescription
+			) {
 		this.setId(id);
 		this.setCategoryName(categoryName);
 		this.setCategoryDescription(categoryDescription);

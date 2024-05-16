@@ -20,7 +20,8 @@ public class CategoryController {
 		categories.add(new CategoryEntity(5, "Effects Pedals", "Enhance your sound with our effects pedals"));
 		categories.add(new CategoryEntity(6, "Studio Equipment", "Everything you need to set up your home studio"));
 		categories.add(new CategoryEntity(7, "Stage Lighting", "Illuminate your stage with our lighting solutions"));
-		categories.add(new CategoryEntity(8, "Concert Tickets", "Get your tickets for upcoming concerts and live events"));
+		categories.add(
+				new CategoryEntity(8, "Concert Tickets", "Get your tickets for upcoming concerts and live events"));
 		categories.add(new CategoryEntity(9, "Software", "Discover software for music production and recording"));
 		categories
 				.add(new CategoryEntity(10, "Books & Media", "Explore books and media related to music and musicians"));
@@ -64,6 +65,7 @@ public class CategoryController {
 				return category;
 			}
 		}
+
 		System.out.println("No category with id " + id);
 
 		return null;
@@ -76,6 +78,7 @@ public class CategoryController {
 		if (existingCategory == null) {
 			return null;
 		}
+
 		existingCategory.setCategoryName(updatedCategory.getCategoryName());
 		existingCategory.setCategoryDescription(updatedCategory.getCategoryDescription());
 
@@ -89,6 +92,7 @@ public class CategoryController {
 		if (categoryToDelete != null) {
 			categories.remove(categoryToDelete);
 		}
+
 		System.out.println(categoryToDelete.getCategoryName() + " successfully deleted");
 
 		return categoryToDelete;
