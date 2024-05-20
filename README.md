@@ -38,8 +38,9 @@
 -   Structured Query Language (SQL) Queries
 -   Views in SQL Language
 
-## 4. Architecture of Web Systems
+## 4. Backend Development
 
+-   Architecture of Web Systems
 -   Principles of Client-Server Architecture
 -   Hypertext Transfer Protocol (HTTP)
 -   Representational State Transfer (REST) Architecture

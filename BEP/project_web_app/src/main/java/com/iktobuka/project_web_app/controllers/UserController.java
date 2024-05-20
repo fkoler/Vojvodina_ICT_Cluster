@@ -75,7 +75,7 @@ public class UserController {
 		return new UserEntity();
 	}
 
-	@PostMapping("/users")
+	@PostMapping
 	public UserEntity addUser(@RequestBody UserEntity newUser) {
 		int newId = users.size() + 1;
 		newUser.setId(newId);

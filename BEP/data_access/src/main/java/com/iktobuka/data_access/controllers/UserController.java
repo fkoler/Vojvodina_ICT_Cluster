@@ -1,5 +1,7 @@
 package com.iktobuka.data_access.controllers;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -14,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.iktobuka.data_access.entities.AddressEntity;
 import com.iktobuka.data_access.entities.UserEntity;
+import com.iktobuka.data_access.repositories.AddressRepository;
 import com.iktobuka.data_access.repositories.UserRepository;
 
 @RestController
@@ -24,9 +28,13 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 
+	@Autowired
+	private AddressRepository addressRepository;
+
 	@GetMapping
 	public Iterable<UserEntity> getUsers() {
 		System.out.println("Operation getUsers successfully done");
+
 		return userRepository.findAll();
 	}
 
@@ -38,6 +46,7 @@ public class UserController {
 		userRepository.save(user);
 
 		System.out.println("Operation addUser successfully done");
+
 		return user;
 	}
 
@@ -67,6 +76,7 @@ public class UserController {
 			userRepository.save(existingUser);
 
 			System.out.println("Operation updateUser successfully done");
+
 			return existingUser;
 		} else {
 			System.out.println("Operation updateUser failed");
@@ -83,6 +93,7 @@ public class UserController {
 			userRepository.deleteById(id);
 
 			System.out.println("Operation deleteUser successfully done");
+
 			return userToDelete;
 		} else {
 			System.out.println("Operation deleteUser failed");
@@ -111,6 +122,7 @@ public class UserController {
 
 		if (!users.isEmpty()) {
 			users.sort(Comparator.comparing(UserEntity::getEmail));
+
 			System.out.println("Operation getUsersByName successfully done");
 
 			return users;
@@ -119,5 +131,51 @@ public class UserController {
 
 			return null;
 		}
+	}
+
+	@GetMapping("/by-dob")
+	public List<UserEntity> getUsersByDateOfBirth(@RequestParam LocalDate dateOfBirth) {
+		List<UserEntity> users = userRepository.findByDateOfBirthOrderByNameAsc(dateOfBirth);
+
+		if (!users.isEmpty()) {
+			System.out.println("Operation getUsersByDateOfBirth successfully done");
+
+			return users;
+		} else {
+			System.out.println("Operation getUsersByDateOfBirth failed");
+
+			return new ArrayList<>();
+		}
+	}
+
+	@GetMapping("/by-name-first-letter/{firstLetter}")
+	public List<String> getUserNamesByFirstLetter(@PathVariable char firstLetter) {
+		List<UserEntity> users = userRepository.findByNameStartingWithIgnoreCase(firstLetter);
+		List<String> userNames = new ArrayList<>();
+
+		if (!users.isEmpty()) {
+			System.out.println("Operation getUserNamesByFirstLetter successfully done");
+
+			for (UserEntity user : users) {
+				userNames.add(user.getName());
+			}
+
+			return userNames;
+		} else {
+			System.out.println("Operation getUserNamesByFirstLetter failed");
+
+			return new ArrayList<>();
+		}
+	}
+
+	@PutMapping("/{id}/address")
+	public UserEntity addAddressToUser(@PathVariable Integer id, @RequestParam String address) {
+		UserEntity userDB = userRepository.findById(id).get();
+		AddressEntity addressDB = addressRepository.findById(Integer.parseInt(address)).get();
+
+		userDB.setAddress(addressDB);
+		userRepository.save(userDB);
+
+		return userDB;
 	}
 }
