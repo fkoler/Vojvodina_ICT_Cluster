@@ -45,8 +45,13 @@
 -   Hypertext Transfer Protocol (HTTP)
 -   Representational State Transfer (REST) Architecture
 -   Spring and Functional Levels of Spring Applications
--   Data layer
+-   Data Layer
 -   Object-Relational Mapping (ORM)
 -   Hibernate
 -   Repositories in Spring
 -   Hibernate and Spring
+-   Service layer in Spring
+-   Services for working with Database
+-   Services for working with Files
+-   Logging
+-   Services for working with Email Servers

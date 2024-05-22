@@ -25,21 +25,21 @@ public class UserEntity {
 	@Column(nullable = false, unique = true)
 	protected String email;
 
-	@Column
+	@Column(nullable = true)
 	protected String comment;
 
-	@Column(nullable = false)
+	@Column(nullable = true)
 	protected LocalDate dateOfBirth;
 
-	@Column(nullable = false, unique = true, length = 15)
+	@Column(nullable = true, unique = true, length = 15)
 	protected String phoneNumber;
 
-	@Column(nullable = false, unique = true, length = 9)
+	@Column(nullable = true, unique = true, length = 9)
 	protected String ssn;
 
-	@Column(nullable = false, unique = true, length = 10)
+	@Column(nullable = true, unique = true, length = 10)
 	protected String idCardNumber;
-	
+
 	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
 	@JoinColumn(name = "address")
 	protected AddressEntity address;
@@ -47,15 +47,8 @@ public class UserEntity {
 	public UserEntity() {
 	}
 
-	public UserEntity(
-			Integer id, 
-			String name, 
-			String email, 
-			LocalDate dateOfBirth, 
-			String phoneNumber, 
-			String ssn,
-			String idCardNumber
-			) {
+	public UserEntity(Integer id, String name, String email, LocalDate dateOfBirth, String phoneNumber, String ssn,
+			String idCardNumber) {
 		this.setId(id);
 		this.setName(name);
 		this.setEmail(email);
@@ -135,5 +128,5 @@ public class UserEntity {
 
 	public void setAddress(AddressEntity address) {
 		this.address = address;
-	}	
+	}
 }

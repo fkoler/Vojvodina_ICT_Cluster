@@ -17,7 +17,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Version;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class AddressEntity {
 
 	@Id
@@ -40,11 +40,11 @@ public class AddressEntity {
 	@JsonIgnore
 	protected List<UserEntity> users = new ArrayList<>();
 
-	public Integer getId() {
-		return id;
+	public AddressEntity() {
 	}
 
-	public AddressEntity() {
+	public Integer getId() {
+		return id;
 	}
 
 	public void setId(Integer id) {
@@ -89,5 +89,19 @@ public class AddressEntity {
 
 	public void setUsers(List<UserEntity> users) {
 		this.users = users;
+	}
+	
+	public void addUser(UserEntity user) {
+		if (user != null && !users.contains(user)) {
+			users.add(user);
+			user.setAddress(this);
+		}
+	}
+
+	public void removeUser(UserEntity user) {
+		if (user != null && users.contains(user)) {
+			users.remove(user);
+			user.setAddress(null);
+		}
 	}
 }
