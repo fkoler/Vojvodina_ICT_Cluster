@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<style>
+		body {
+			background-color: #000000;
+			color: #f5f5f5;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Spring Boot file upload example</h1>
+	<form method="POST" action="/upload" enctype="multipart/form-data">
+		<input type="file" name="file" /><br /><br />
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+
+</html>

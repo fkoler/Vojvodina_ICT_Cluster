@@ -17,6 +17,7 @@ import com.iktobuka.data_access.entities.AddressEntity;
 import com.iktobuka.data_access.entities.UserEntity;
 import com.iktobuka.data_access.repositories.AddressRepository;
 import com.iktobuka.data_access.repositories.UserRepository;
+import com.iktobuka.data_access.services.AddressDao;
 
 @RestController
 @RequestMapping(value = "/api/v1/addresses")
@@ -26,11 +27,14 @@ public class AddressController {
 	protected AddressRepository addressRepository;
 	
 	@Autowired
+	protected AddressDao addressService;
+	
+	@Autowired
 	protected UserRepository userRepository;
 
-	@GetMapping("/all")
+	@GetMapping
 	public Iterable<AddressEntity> getAllAddresses() {
-		return addressRepository.findAll();
+		return addressService.findAllDao();
 	}
 
 	@PostMapping("/create")
@@ -38,15 +42,9 @@ public class AddressController {
 			@RequestParam String street,
 			@RequestParam String city,
 			@RequestParam String country
-		) {
-		AddressEntity address = new AddressEntity();
-		address.setStreet(street);
-		address.setCity(city);
-		address.setCountry(country);
-		
-		addressRepository.save(address);
+		) {		
 
-		return address;
+		return addressService.createAddressDao(street, city, country);
 	}
 
 	@PostMapping("/add")
@@ -134,5 +132,10 @@ public class AddressController {
 		} else {
 			return null;
 		}
-	}	
+	}
+	
+	@GetMapping("/user/{name}")
+	public List<AddressEntity> findAddressForAUser(@PathVariable String name){
+		return addressService.findAddressesByUserNameDao(name);
+	}
 }
