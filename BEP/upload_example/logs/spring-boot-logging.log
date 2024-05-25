@@ -1,0 +1,54 @@
+2024-05-22T18:41:10.952+02:00  INFO 1060 --- [upload_example] [restartedMain] c.i.u.UploadExampleApplication           : Starting UploadExampleApplication using Java 17.0.11 with PID 1060 (C:\Users\feren\sts-workspace\upload_example\target\classes started by feren in C:\Users\feren\sts-workspace\upload_example)
+2024-05-22T18:41:10.971+02:00  INFO 1060 --- [upload_example] [restartedMain] c.i.u.UploadExampleApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-05-22T18:41:11.118+02:00  INFO 1060 --- [upload_example] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-22T18:41:11.120+02:00  INFO 1060 --- [upload_example] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-22T18:41:13.553+02:00  INFO 1060 --- [upload_example] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2024-05-22T18:41:13.590+02:00  INFO 1060 --- [upload_example] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-05-22T18:41:13.591+02:00  INFO 1060 --- [upload_example] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-22T18:41:13.745+02:00  INFO 1060 --- [upload_example] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-05-22T18:41:13.747+02:00  INFO 1060 --- [upload_example] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2624 ms
+2024-05-22T18:41:14.683+02:00  INFO 1060 --- [upload_example] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-22T18:41:14.773+02:00  INFO 1060 --- [upload_example] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path ''
+2024-05-22T18:41:14.808+02:00  INFO 1060 --- [upload_example] [restartedMain] c.i.u.UploadExampleApplication           : Started UploadExampleApplication in 5.037 seconds (process running for 7.266)
+2024-05-22T18:41:21.973+02:00  INFO 1060 --- [upload_example] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-22T18:41:21.976+02:00  INFO 1060 --- [upload_example] [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2024-05-22T18:41:21.979+02:00  INFO 1060 --- [upload_example] [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 3 ms
+2024-05-22T18:49:51.357+02:00  INFO 1060 --- [upload_example] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-05-22T18:49:51.680+02:00  INFO 1060 --- [upload_example] [restartedMain] c.i.u.UploadExampleApplication           : Starting UploadExampleApplication using Java 17.0.11 with PID 1060 (C:\Users\feren\sts-workspace\upload_example\target\classes started by feren in C:\Users\feren\sts-workspace\upload_example)
+2024-05-22T18:49:51.690+02:00  INFO 1060 --- [upload_example] [restartedMain] c.i.u.UploadExampleApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-05-22T18:49:52.277+02:00  INFO 1060 --- [upload_example] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2024-05-22T18:49:52.280+02:00  INFO 1060 --- [upload_example] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-05-22T18:49:52.281+02:00  INFO 1060 --- [upload_example] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-22T18:49:52.325+02:00  INFO 1060 --- [upload_example] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-05-22T18:49:52.326+02:00  INFO 1060 --- [upload_example] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 620 ms
+2024-05-22T18:49:52.581+02:00  INFO 1060 --- [upload_example] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-22T18:49:52.609+02:00  INFO 1060 --- [upload_example] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path ''
+2024-05-22T18:49:52.625+02:00  INFO 1060 --- [upload_example] [restartedMain] c.i.u.UploadExampleApplication           : Started UploadExampleApplication in 1.079 seconds (process running for 525.083)
+2024-05-22T18:49:52.655+02:00  INFO 1060 --- [upload_example] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-22T18:50:25.760+02:00  INFO 1060 --- [upload_example] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-05-22T18:50:26.006+02:00  INFO 1060 --- [upload_example] [restartedMain] c.i.u.UploadExampleApplication           : Starting UploadExampleApplication using Java 17.0.11 with PID 1060 (C:\Users\feren\sts-workspace\upload_example\target\classes started by feren in C:\Users\feren\sts-workspace\upload_example)
+2024-05-22T18:50:26.011+02:00  INFO 1060 --- [upload_example] [restartedMain] c.i.u.UploadExampleApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-05-22T18:50:26.568+02:00  INFO 1060 --- [upload_example] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2024-05-22T18:50:26.570+02:00  INFO 1060 --- [upload_example] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-05-22T18:50:26.572+02:00  INFO 1060 --- [upload_example] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-22T18:50:26.619+02:00  INFO 1060 --- [upload_example] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-05-22T18:50:26.620+02:00  INFO 1060 --- [upload_example] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 599 ms
+2024-05-22T18:50:26.852+02:00  INFO 1060 --- [upload_example] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-22T18:50:26.875+02:00  INFO 1060 --- [upload_example] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path ''
+2024-05-22T18:50:26.891+02:00  INFO 1060 --- [upload_example] [restartedMain] c.i.u.UploadExampleApplication           : Started UploadExampleApplication in 1.002 seconds (process running for 559.348)
+2024-05-22T18:50:26.898+02:00  INFO 1060 --- [upload_example] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-22T18:51:10.247+02:00  INFO 1060 --- [upload_example] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-22T18:51:10.247+02:00  INFO 1060 --- [upload_example] [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2024-05-22T18:51:10.248+02:00  INFO 1060 --- [upload_example] [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+2024-05-22T18:51:10.263+02:00  WARN 1060 --- [upload_example] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2024-05-22T18:52:09.648+02:00  WARN 1060 --- [upload_example] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2024-05-22T18:53:13.802+02:00  INFO 1060 --- [upload_example] [http-nio-8080-exec-5] c.i.u.c.UploadController                 : This is an info message
+2024-05-22T18:53:13.802+02:00  WARN 1060 --- [upload_example] [http-nio-8080-exec-5] c.i.u.c.UploadController                 : This is a warn message
+2024-05-22T18:53:13.804+02:00 ERROR 1060 --- [upload_example] [http-nio-8080-exec-5] c.i.u.c.UploadController                 : This is an error message
+2024-05-22T18:53:39.120+02:00  INFO 1060 --- [upload_example] [http-nio-8080-exec-7] c.i.u.c.UploadController                 : This is an info message
+2024-05-22T18:53:39.121+02:00  WARN 1060 --- [upload_example] [http-nio-8080-exec-7] c.i.u.c.UploadController                 : This is a warn message
+2024-05-22T18:53:39.121+02:00 ERROR 1060 --- [upload_example] [http-nio-8080-exec-7] c.i.u.c.UploadController                 : This is an error message
+2024-05-22T18:54:07.138+02:00  INFO 1060 --- [upload_example] [http-nio-8080-exec-9] c.i.u.c.UploadController                 : This is an info message
+2024-05-22T18:54:07.138+02:00  WARN 1060 --- [upload_example] [http-nio-8080-exec-9] c.i.u.c.UploadController                 : This is a warn message
+2024-05-22T18:54:07.139+02:00 ERROR 1060 --- [upload_example] [http-nio-8080-exec-9] c.i.u.c.UploadController                 : This is an error message
+2024-05-22T19:20:10.645+02:00  INFO 1060 --- [upload_example] [RMI TCP Connection(57)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.

@@ -2,6 +2,8 @@ package com.iktobuka.upload_example.controllers;
 
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,8 @@ public class UploadController {
 
 	@Autowired
 	private FileHandler fileHandler;
+	
+	private final Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
 	@GetMapping
 	public String index() {
@@ -35,6 +39,12 @@ public class UploadController {
 			@RequestParam("file") MultipartFile file, 
 			RedirectAttributes redirectAttributes
 		) {
+		
+		logger.debug("This is a debug message");
+		logger.info("This is an info message");
+		logger.warn("This is a warn message");
+		logger.error("This is an error message");
+		
 		String result = null;
 		
 		try {
