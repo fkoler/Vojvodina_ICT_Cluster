@@ -55,3 +55,9 @@
 -   Services for working with Files
 -   Logging
 -   Services for working with Email Servers
+-   Editing Output Data
+-   JavaScript Object Notation - JSON
+-   Jackson Annotations
+-   Jackson and Spring - Serialization and Deserialization
+-   Working with HTTP Codes
+-   Data Transfer Objects (DTO)
