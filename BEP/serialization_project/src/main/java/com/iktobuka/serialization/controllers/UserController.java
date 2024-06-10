@@ -5,20 +5,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.iktobuka.serialization.controllers.util.RESTError;
 import com.iktobuka.serialization.entities.AddressEntity;
 import com.iktobuka.serialization.entities.UserEntity;
+import com.iktobuka.serialization.entities.dto.UserDTO;
+import com.iktobuka.serialization.entities.dto.UserRegisterDTO;
 import com.iktobuka.serialization.security.Views;
+import com.iktobuka.serialization.service.UserService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
+	
+	@Autowired
+	protected UserService userService;
 
 	public List<UserEntity> getDummyDB() {
 		List<UserEntity> list = new ArrayList<>();
@@ -97,23 +102,48 @@ public class UserController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<?> getUserById(@PathVariable Integer id) {
+	public ResponseEntity<?> getUserById(
+			@PathVariable Integer id
+		) {
 		try {
 			for (UserEntity ue : getDummyDB()) {
 				if (ue.getId() == id) {
-					return new ResponseEntity<UserEntity>(ue, HttpStatus.OK);
+					return new ResponseEntity<UserEntity>(
+							ue, HttpStatus.OK
+						);
 				}
 			}
 
-			return new ResponseEntity<String>(
-					"User not found", 
+			return new ResponseEntity<RESTError>(
+					new RESTError(1, "User not found"),
 					HttpStatus.NOT_FOUND
-			);
+				);
 		} catch (Exception e) {
-			return new ResponseEntity<String>(
-					e.getCause().getMessage(),
+			return new ResponseEntity<RESTError>(
+					new RESTError(2, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR
-			);
+				);
 		}
+	}
+
+	@PostMapping
+	public ResponseEntity<?> createUser(
+			@RequestBody UserRegisterDTO user
+		) {		
+		return new ResponseEntity<UserDTO>(
+				userService.createUser(user),
+				HttpStatus.OK
+			);
+	}
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<?> updateUser(
+			@RequestBody UserDTO user,
+			@PathVariable Integer id
+		) {		
+		return new ResponseEntity<UserDTO>(
+				userService.updateUser(user, id),
+				HttpStatus.OK
+			);
 	}
 }

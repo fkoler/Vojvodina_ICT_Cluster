@@ -10,7 +10,12 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 public class GlobalExceptionHandler {
 
 	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
-	public ResponseEntity<String> handleTypeMismatch(MethodArgumentTypeMismatchException ex) {
-		return new ResponseEntity<>("Invalid ID format", HttpStatus.BAD_REQUEST);
+	public ResponseEntity<String> handleTypeMismatch(
+			MethodArgumentTypeMismatchException ex
+		) {
+		return new ResponseEntity<>(
+				"Invalid ID format",
+				HttpStatus.BAD_REQUEST
+			);
 	}
 }

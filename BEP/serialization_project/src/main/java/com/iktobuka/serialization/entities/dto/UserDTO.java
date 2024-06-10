@@ -1,18 +1,16 @@
-package com.iktobuka.serialization.entities;
+package com.iktobuka.serialization.entities.dto;
 
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonView;
-
+import com.iktobuka.serialization.entities.AddressEntity;
 import com.iktobuka.serialization.security.Views;
 
-@JsonIgnoreProperties({ "password", "version" })
-public class UserEntity {
-
+public class UserDTO {
+	
 	@JsonView(Views.Public.class)
 	@JsonProperty("ID")
 	private Integer id;
@@ -40,7 +38,7 @@ public class UserEntity {
 	@JsonManagedReference
 	private AddressEntity address;
 
-	public UserEntity() {
+	public UserDTO() {
 	}
 
 	public Integer getId() {
