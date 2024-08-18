@@ -1,0 +1,55 @@
+/* CSS - Cascading Style Sheets
+    - jezik za stilizovanje Web stranice 
+    - opisuje kako ce HTML element da bude prikazan, odnosno mozemo da definisemo vizuelni prikay HTML elementa (svi elementi imaju predefinisan izgled koji moze da se promeni),
+    - moze da se definise na vise nacina:
+        - unutar samih HTML elemenata (upotreba atributa style)
+        - upotreba taga <style> u dokumentu (tag se pise u okviru <head> sekcije)
+        - kreiranjem spoljasnje datoteke stilova (datoteka ima ekstenziju .css i ovo cemo najvise koristiti)
+            - ovo nam omogucava da jedan stil mozemo da primenimo na vise stranica
+            
+    - mozemo da definisemo vise stilova za isti element, ako je to slucaj onda se gledaju prioriteti
+        1. unutar samih HTLM elemenata => <p style="color:blue"> (tekst koji se nadje u p tagu bice plave boje) -> ovo mozete videti u HTMLTekst.js fajlu
+        2. <style> tag => selektor {svojstvo: vrednost}
+        3. spoljasnja datoteka stilova (.css) => selektor {svojstvo: vrednost}
+        4. podrazumevani stil - ovo se koristi ako za neki element nismo definisali nase stilove 
+    - selektor definise na koji element se odnosi stil koji je definisan; selektor moze da bude:
+        - naziv taga => ako je ovo slucaj onda se definisan stil primenjuje na svim tagovima u dokumentu (npr. h1, h2, p...)
+        - klasa => nad elementom definisemo atribut className (ovo je u JSX-u, u HTML je to atribut class);
+                - jedan element moze da bude anotiran sa vise klasa odvojenih razmakom
+                - obavezno ispred naziva klase treba da stavimo '.'
+        - identifikator => nad elementom definisemo atribut id i onda na osnovu njega vrsimo selekciju; 
+                - obavezno isped naziva identifikatora moramo da stavimo #
+    - svojstvo predstavlja vizuelnu karakteristiku koju zelimo da promenimo
+    - vrednost je nova vrednost nekog svojstva 
+
+- Definisanje stila u .css fajlu
+    - pisemo skup pravila koja se sastoje od slektora i deklarativnog bloka
+    - u deklarativnom bloku definisemo nove vrednosti pojedinih atributa (pise se u {})
+*/
+
+/* selekcija po tagu -> napravicemo da svi elementi oznaceni sa h1 budu zelene boje */
+h5 {
+    color: green;
+}
+
+/* selekcija po id-u -> mozemo napraviti da samo neki li elementi bude prikazan na drugaciji nacin
+                    - id-evi moraju biti jedinistveni 
+*/
+#li_id_1 {
+    color: rgb(54, 145, 145);
+    /* boju mozete da definisete na vise nacina: rgb, hex broj ili da napisemo koja je boja od ponudjenih */
+    font-weight: bold;
+}
+
+#li_id_2 {
+    color: #122281;
+}
+
+/* selekcija po klasi -> jedna klasa moze da se primeni na vise elemenata istovremeno (najcesce se ovo koristi)*/
+.text_class {
+    color: mediumseagreen;
+}
+
+.span_code {
+    margin-left: 20px;
+}

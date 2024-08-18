@@ -1,0 +1,16 @@
+.tabela {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid rgb(211, 46, 46);
+    border-collapse: double;
+}
+
+.tabela td, .tabela th {
+    border: 2px solid rgb(211, 46, 46);
+    border-collapse: double;
+}
+
+.tabela th {
+    background-color: gray;
+}

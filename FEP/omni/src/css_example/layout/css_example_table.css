@@ -1,0 +1,52 @@
+/* CSS za formatiranje tabele - pisemo pravila kako ce da izgleda zaglavlje a kako redovi i kolone tabele */
+
+/* definisemo kako ce tabela prikazana, hocemo da bude centrirana u prostoru koji joj je dodeljen */
+.container_table {
+    position: relative;
+    width: 50%;
+    height: inherit;
+    margin: auto;
+    padding: 15px;
+}
+
+/* stil koji ce se primeniti na sve u tabeli zato sto smo celu tabelu anotirali sa klasom 'table_students' */
+.table_students {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: inherit;
+    margin: auto;
+}
+
+/* definisemo stil koji ce biti primenjen na th i td elemente u tabeli,
+ upotrebicemo kombinovanu selekciju klasa + tag u okviru elementa sa tom klasom */
+
+.table_students th, .table_students td {
+    border: 1px solid #f2f2f2;
+    padding: 8px;
+    text-align: center;
+}
+
+
+.table_students caption{
+    margin: 10px;
+    font-size: larger;
+    font-weight: 700;
+}
+
+/* stil koji ce biti primenjen na sve parne redove tabele */
+.table_students tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+/* stil koji ce biti primenjen na zaglavlje tabele*/
+.table_students th {
+    background-color: #d4e5f6;
+    font-size: large;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* pomocu css-a mozemo da definisemo i stil koji se menja kada se predje preko elementa */
+.table_students tr:hover{
+    background-color: #d4e5f6;
+}

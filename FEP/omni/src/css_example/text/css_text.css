@@ -1,0 +1,68 @@
+/*
+Primeri CSS pravila za formatiranje teksta
+*/
+.lorem_ipsum_color {
+    color: #c04b4b;
+}
+
+.lorem_ipsum_background {
+    background-color: lightblue;
+    
+}
+
+.lorem_ipsum_decoration{
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: #c04b4b;
+}
+
+.lorem_ipsum_uppercase {
+    color: #c04b4b;
+    text-transform: uppercase;
+}
+
+
+.lorem_ipsum_lowercase {
+    color: darkcyan;
+    text-transform: lowercase;
+}
+
+
+.lorem_ipsum_capitalize {
+    color: brown;
+    text-transform: capitalize;
+}
+
+.alignment_center{
+    text-align: center;
+}
+
+
+.alignment_justify{
+    text-align: justify;
+}
+.alignment_left{
+    text-align: left;
+}
+.alignment_right{
+    text-align: right;
+}
+
+.container_text{
+    display: flex;
+    flex-direction: row;
+}
+
+.container_item {
+    width: 400px;
+    margin: auto;
+    border: solid #c04b4b 2px;
+    padding: 15px;
+}
+
+.text_indent{
+    text-indent: 30px;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    text-shadow: 0 0 3px #c04b4b;
+}

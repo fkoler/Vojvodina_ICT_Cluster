@@ -1,0 +1,84 @@
+/* CSS za formu */
+.container-form {
+    position: relative;
+    width: 80%;
+    height: inherit;
+    margin: auto;
+    padding: 15px;
+    border: solid 2px aliceblue;
+}
+.form-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+}
+
+.label {
+    font-size: large;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.input-field{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    margin: 5px;
+}
+
+.text-field {
+    border: 2px solid  #f1f1f1;
+    height: 40px;
+    font-size: large;
+}
+
+.select-field {
+    width: stretch;
+    height: 50%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    font-size: small;
+  }
+
+  .radio-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .checkbox-container {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #f1f1f1;
+  }
+
+  .button {
+    padding: 10px;
+    font-size: larger;
+    width: 50%;
+    margin: auto;
+  }
+
+  .submit-btn {
+    background-color: #73AD21;
+    color: white;
+    border: solid 1px #73AD21;
+  }
+
+  .click-btn {
+    background-color: #34a4eb;
+    color: white;
+    border: solid 1px #34a4eb;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .form-container{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+

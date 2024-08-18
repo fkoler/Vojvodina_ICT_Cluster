@@ -1,0 +1,26 @@
+.navlist {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.navlist li {
+    display: inline-block;
+    margin: 12px;
+}
+
+.navitem {
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: lightblue;
+    font-weight: 600;
+    color: navy;
+    padding: 6px;
+}
+
+.active {
+    background-color: navy;
+    color: lightblue;
+}
+

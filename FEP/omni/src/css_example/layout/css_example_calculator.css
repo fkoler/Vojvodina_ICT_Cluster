@@ -1,0 +1,45 @@
+/* stil za prikaz kalkulatora */
+
+.container_cal {
+    display: flex;
+    width: inherit;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.col {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.expression {
+    background-color: white;
+    width: inherit;
+    height: 100px;
+    font-size: 50px;
+    border-radius: 1px solid gray;
+}
+
+.result {
+    background-color: white;
+    margin-bottom: 12px;
+    width: inherit;
+    height: 60px;
+    font-size: 50px;
+    border-radius: 1px solid gray;
+}
+
+.button {
+    margin: 2px;
+    width: inherit;
+    font-weight: 700;
+    border-radius: 2px solid gray;
+    font-size: 43px;
+    text-align: center;
+}
+

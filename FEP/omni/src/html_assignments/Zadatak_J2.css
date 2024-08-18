@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.title {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border: 2px solid #000000;
+    padding: 20px;
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 20px;
+    height: 500px;
+}
+
+.text-section {
+    text-align: center;
+    border: 2px solid #4caf50;
+    margin-right: 20px;
+    flex: 1;
+}
+
+.song-text {
+    padding: 20px;
+}
+
+.text-section h1,
+.text-section h2 {
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.text-section h1 {
+    margin-bottom: 10px;
+}
+
+.text-section h2 a {
+    color: #008000;
+    text-decoration: none;
+}
+
+.text-section .highlight {
+    color: #0000ff;
+    font-weight: bold;
+}
+
+.image-section img {
+    max-width: 300px;
+    height: auto;
+    border: 2px solid #000000;
+}

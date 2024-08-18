@@ -1,0 +1,17 @@
+.poem-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.poem-container h1 {
+    font-weight: bold;
+}
+
+.poem-container hr {
+    margin: 20px 0;
+}
+
+.poem-container p {
+    font-size: 18px;
+    line-height: 1.6;
+}

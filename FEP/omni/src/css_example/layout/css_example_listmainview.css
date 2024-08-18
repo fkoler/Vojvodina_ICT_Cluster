@@ -1,0 +1,139 @@
+/* prozor je izdeljen na mrezu 3*2 (3 reda i 2 kolone); delovi: zaglavlje, sadrzaj sa leve strane (side meni), glavni sadrzaj i footer */
+.container_list_main_view {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  /* za svaku celiju dodelimo alias i onda na osnovnu njega posle definisemo gde se koji element nalazi */
+  grid-template-areas: "sidenav header" 
+                        "sidenav main"
+                        "sidenav footer";
+}
+
+  /* ovaj kontejner ce predstaviti zaglavlje i bice pozicioniran u prvom redu i drugoj koloni, 
+  obojen sivom bojamo, sa flex rasporedom, koji nije toliko striktan kao grid, elementi ce biti rasporedjeni u redu
+  centrirani sa razmakom izmedju njih*/
+
+.container_list_main_view_header {
+  grid-area: header; 
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 16px;
+}
+
+/* kontejner za prikaz menia, stavke menija ce biti rasporedjene jedna ispod druge, centrirane 
+  - kontejner je obojen crno i zuzece celu prvu kolonu
+*/
+.container_list_main_view_sidenav {
+  grid-area: sidenav;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+/* stil za listu stavki menia */
+.container_list_main_view_sidenav_list {
+  padding: 0;
+  margin-top: 85px;
+  list-style-type: none;
+}
+
+/* stavke menija */
+.container_list_main_view_sidenav_list_item {
+  padding: 20px 20px 20px 40px;
+  color: #ddd;
+}
+
+/* prelaskom preko stavke menia pozadina stavke ce biti obojena u odredjenu boju, a kursor misa nece biti strelica nego ruka */
+.container_list_main_view_sidenav_list_item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+
+/* kontejner za glavni sadrzaj, zauzece celiju koja se nalaze u drugom redu i drugoj koloni */
+.container_list_main_view_main {
+  grid-area: main;
+  background-color: #f1f1f1;
+}
+
+/* kontejner koji predstavlja zaglavlje glavnog sadrzaja, nacice se na vrhu glavnog sadrzaja posto je glavni 
+kontejner ima blokovski raspored, tako da ce elementi biti smesteni jedan ispod drugog 
+- zaglavlje glavnog sadrzaja je organizovano pomocu flex-a i elementi ce biti rasporedjeni u redu sa razmakom izmedju elemenata
+*/
+.container_list_main_view_main_header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
+  height: 150px;
+  background-color: #ddd;
+  color: slategray;
+}
+
+/*
+ispod zaglavlja u delu za glavni sadrzaj se nalazi kontejner za brzi pregled nekih stavki aplikacije 
+- ovde je upotrebljen grid raspored i broj kolona ce biti definisan na osnovu sadrzaja koji se nadje u 
+ovom kontejneru, ali ni jedna kolona nece biti ispod 265px 
+*/
+.container_list_main_view_main_overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  grid-auto-rows: 94px;
+  grid-gap: 20px;
+  margin: 20px;
+}
+
+/* stil za karticu u kojoj je prikazan pregled, za organizaciju rasporeda iskoriscen je flex raspored */
+.overviewcard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #d3d3;
+}
+
+/* kontejner za prikaz kartica, prostor je podeljen u dve kolone */
+.container_list_main_view_main_cards {
+  column-count: 2;
+  column-gap: 20px;
+  margin: 20px;
+}
+
+/* kontejner za prikaz kartice */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #82bef6;
+  margin-bottom: 20px;
+  -webkit-column-break-inside: avoid;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Force varying heights to simulate dynamic content */
+.card:first-child {
+  height: 485px;
+}
+
+.card:nth-child(2) {
+  height: 200px;
+}
+
+.card:nth-child(3) {
+  height: 265px;
+}
+
+.container_list_main_view_footer {
+  grid-area: footer;
+  background-color: grey;
+}
+
+

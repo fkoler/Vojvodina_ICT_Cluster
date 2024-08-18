@@ -1,0 +1,70 @@
+.stopwatch-main {
+    border: 1px lightblue solid;
+    border-radius: 14px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2rem 2rem 1fr;
+    width: fit-content;
+    margin: auto;
+    padding: 5px;
+}
+
+.time-display {
+    border: 1px orange solid;
+    border-radius: 14px;
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: x-large;
+    padding: 3px;
+    grid-row: 1;
+    grid-column: 1 / 4;
+}
+
+.lap-list {
+    grid-row: 3;
+    grid-column: 1/4;
+    font-family: 'Courier New', Courier, monospace;
+    list-style-type: none;
+}
+
+.button {
+    border: 1px lightblue solid;
+    border-radius: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    display: inline-flex;
+    align-items: center;
+}
+
+.button.reset {
+    background-color: lightcoral;
+    grid-row: 2;
+    grid-column: 1;
+    justify-self: start;
+}
+
+.button.start {
+    background-color: lightgreen;
+    grid-row: 2;
+    grid-column: 3;
+    justify-self: end;
+    color: black;
+}
+
+.button.pause {
+    background-color: yellow;
+    grid-row: 2;
+    grid-column: 3;
+    justify-self: end;
+    color: black;
+}
+
+.button.lap {
+    background-color: lightgoldenrodyellow;
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: center;
+    color: black;
+}

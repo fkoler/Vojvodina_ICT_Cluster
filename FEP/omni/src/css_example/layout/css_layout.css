@@ -1,0 +1,106 @@
+/* Stil nekog elementa definicemo pomocu pravila. 
+U okviru pravila specificiramo osobine koje zelimo da promenimo i tim osobinama dodeljujemo nove vrednosti. 
+Svako pravilo ima sledece delove: 
+    - selektor - na koji element ce se definisane osobine primeniti 
+        - .className -> selektujemo na osnovu klase, sto znaci da ce pravilo da se 
+        primeni na sve elemente za koje smo definisali atribut class, odnosno className ako radimo sa JSX-om
+    - deklarativni blok -> u okviru bloka specificiramo osobine i njhove vrednosti
+        - primer: { display: flex;} (osobina display je postavljena na vrednost flex, 
+        sto znaci da ce elementi biti rasporedjeni po principu flex rasporeda 
+*/
+
+.layout_none {
+    display: none;
+}
+
+.layout_inline {
+    display: inline;
+    background-color: aqua;
+}
+
+.layout_block {
+    display: block;
+    background-color: aqua;
+}
+
+.layout_inline_block {
+    display: inline-block;
+    background-color: aqua;
+    width: 300px;
+    height: 60px;
+}
+
+.layout_grid {
+    /*raspored u vidu mreze, koja ima celije, potrebno je definisati i velicine kolona i redova*/
+    display: grid;
+    /* - navodimo velicine kolona, ako stavimo 1fr to znaci da ce velicina celije biti dinamicki odredjena
+     u zavisnosti od slobodnog prostora na ekranu
+     - u nasem slucaju imacemo 4 kolone i naveli smo da sve zauzimaju po 1fr, tako da ce prostor koji delite biti podeljen na 4 jednaka dela
+     - velicine ne moraju da budu iste za sve kolone 
+     */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /*
+    - definisemo visinu reda, 
+    - ovde smo napravili da imamo 2 reda gde je svaki visok 100px
+    */
+    grid-template-rows: 100px 100px;
+    /* razmak izmedju celija */
+    grid-gap: 10px;
+}
+
+/* specificiramo izgled celije */
+.layout_grid_cell {
+    border: solid 1px aqua;
+    text-align: center;
+}
+
+/* mozemo sami da definisemo gde ce neka celija da se nadje i koliko celija ce da zauzme u mrezi */
+.layout_grid_item_first {
+    /* celija se prostire na dve kolone, tj na prvu i drugu kolonu */
+    grid-column: 1/3;
+}
+
+.layout_grid_item_second {
+    /* celija se prostire na dve kolone, ali sada na 3 i 4 */
+    grid-column: 3/5;
+}
+
+/* celija se prostire na kolone 2 i 3,  i nalazi se u drugom redu */
+.layout_grid_item_third {
+    grid-column: 2/4;
+    grid-row: 2;
+}
+
+/* ovde smo postavili da nam raspored u okviru kontejnera za koji je definisan bude flex, 
+    - flex - najfleksibilniji raspored, koji nam omogucava da podesavamo dosta pojedinacnih osobina za kontejner a i za stavke u kontejneru
+    - flex-direction - kako su stavke orijentisane, u red ili u kolonu
+    - justify-content - centriranost stavki
+    - gap - razmak izmedju stavki
+    - align-content - kako su stavke pozicionirane u kontejneru
+    - flex-wrap - da li ima prelaska u novi red ili novu kolonu
+
+    POSTOJI JOS DOSTA OSOBINA KOJE MI OVDE NISMO SPECIFICIRA, ZA VISE INFORMACIJA POGLEDAJTE NA SAJTU: 
+    https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+.layout_flex_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+    gap: 5px;
+}
+
+.layout_flex_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.layout_flex_item {
+    flex-grow: 1;
+    border: solid 1px aqua;
+    text-align: center;
+}
