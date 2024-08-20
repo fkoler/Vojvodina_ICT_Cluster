@@ -30,6 +30,7 @@ const JSV7 = () => {
             const birthDate = moment({ year, month: month - 1, day });
             const currentDate = moment();
             const ageInSeconds = calculateAgeInSeconds(day, month, year);
+            const minDate = moment('1970-01-01');
 
             if (!day || !month || !year) {
                 setError('Svi podaci moraju biti uneti.');
@@ -49,7 +50,7 @@ const JSV7 = () => {
                 return;
             }
 
-            if (year < 1970) {
+            if (birthDate.isBefore(minDate)) {
                 setError(
                     'Datum nije validan. Datum mora biti posle 1970. godine.'
                 );
