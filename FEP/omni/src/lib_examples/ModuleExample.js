@@ -44,31 +44,33 @@ Ako želite nov paket prvo identifikujete onaj koji vam treba, nađete ka na npm
 
 VODITE RAČUNA: NPM repozitorijum NIJE UVEK BEZBEDAN. Mnogo puta je pronađen maliciozan softver na njemu koji ili pokušava da vas prevari da je validna biblioteka, ili ima ime vrlo slično validnoj biblioteci i pokuša da vas prevari kada nešto pogrešno otkucate. Molim vas budite vrlo pažljivi. Mogu pomoći alati kao što je, npr. https://snyk.io/advisor/, ali generalno govoreći, treba da budete ekstremno pažljivi i konzervativni sa instalacijom paketa, naročito na vaše lične računare. 
 */
-import {f, g, THE_ANSWER} from './Modul1'; //Sintaksa je vrlo jednostavna: samo navedemo u velikim zagradama šta hoćemo da uvezemo iz nekog modula: taj modul može biti specificiran samo imenom (to znači da je to modul koji smo instalirali NPM-om) ili putanjom (Ovde to znači 'Fajl Modul1.js u tekućem direktorijumu). Možemo uvesti bilo šta: konstante, funkcije, klase... 
-//import {h} from './Modul1'; //Ograničenje je to što ono što importujemo ovde mora da je eksportovano tamo odakle ga importujemo. Ako nije, program neće raditi. Ovo je zakomentarisno zato što 'h' nije eksportovan.  
-import {x, f as m2_f} from './Modul2'; //Ponekad nam ne odgovara neko ime u nekom modulu: u ovom slučaju i Modul1 i Modul2 imaju nešto što se zove 'f' i to ne možemo da importujemo zato što onda sistem neće znati da li mislimo f iz Modul1 ili f iz Modul2. Stoga ima ključna reč: 'as' kojom kažmo da 'f' iz Modul2 uvozimo pod imenom 'm2_f' 
-import * as Modul3 from './Modul3'; // Ponekad ne želimo da se bavimo masovnim preimenovanjem: tada možemo da importujemo sve iz nekog modula sa prefiskom tog modula: Ovde smo importovali sve što Modul3 ima ali tako da mu pristupamo tako što kažemo Modul3.ime-eksportovane-stvari. 
-import funckija_iz_modula_4 from './Modul4'; //Moduli mogu da imaju 'podrazumevanu funkciju' (koju ste videli kako specificiramo beskonačno puta). To znači kada importujemo nešto iz tog modula, bez ičega i bez velikih zagrada dobijemo to što je 'podrazumevano.' Ovo nije neophodno koristiti: uglavnom je tu za kompatibilnost sa nekim, starijim, standardima modularizacije. 
+import { f, g, THE_ANSWER } from './Modul1'; //Sintaksa je vrlo jednostavna: samo navedemo u velikim zagradama šta hoćemo da uvezemo iz nekog modula: taj modul može biti specificiran samo imenom (to znači da je to modul koji smo instalirali NPM-om) ili putanjom (Ovde to znači 'Fajl Modul1.js u tekućem direktorijumu). Možemo uvesti bilo šta: konstante, funkcije, klase...
+//import {h} from './Modul1'; //Ograničenje je to što ono što importujemo ovde mora da je eksportovano tamo odakle ga importujemo. Ako nije, program neće raditi. Ovo je zakomentarisno zato što 'h' nije eksportovan.
+import { x, f as m2_f } from './Modul2'; //Ponekad nam ne odgovara neko ime u nekom modulu: u ovom slučaju i Modul1 i Modul2 imaju nešto što se zove 'f' i to ne možemo da importujemo zato što onda sistem neće znati da li mislimo f iz Modul1 ili f iz Modul2. Stoga ima ključna reč: 'as' kojom kažmo da 'f' iz Modul2 uvozimo pod imenom 'm2_f'
+import * as Modul3 from './Modul3'; // Ponekad ne želimo da se bavimo masovnim preimenovanjem: tada možemo da importujemo sve iz nekog modula sa prefiskom tog modula: Ovde smo importovali sve što Modul3 ima ali tako da mu pristupamo tako što kažemo Modul3.ime-eksportovane-stvari.
+import funckija_iz_modula_4 from './Modul4'; //Moduli mogu da imaju 'podrazumevanu funkciju' (koju ste videli kako specificiramo beskonačno puta). To znači kada importujemo nešto iz tog modula, bez ičega i bez velikih zagrada dobijemo to što je 'podrazumevano.' Ovo nije neophodno koristiti: uglavnom je tu za kompatibilnost sa nekim, starijim, standardima modularizacije.
 
 const PrimerModula = () => {
-    return <div>
-        <h3>{f()}</h3>
-        <hr></hr>
-        <h3>{g()}</h3>
-        <hr></hr>
-        <h3>Odgovor je {THE_ANSWER}</h3>
-        <hr></hr>
-        <h3>{x()}</h3>
-        <hr></hr>
-        <h3>{m2_f()}</h3>
-        <hr></hr>
-        <h3>{Modul3.y()}</h3>
-        <hr></hr>
-        <h3>{Modul3.z()}</h3>
-        <hr></hr>
-        <h3>{funckija_iz_modula_4()}</h3>
-        <hr></hr>
-    </div>
-}
+    return (
+        <div>
+            <h3>{f()}</h3>
+            <hr></hr>
+            <h3>{g()}</h3>
+            <hr></hr>
+            <h3>Odgovor je {THE_ANSWER}</h3>
+            <hr></hr>
+            <h3>{x()}</h3>
+            <hr></hr>
+            <h3>{m2_f()}</h3>
+            <hr></hr>
+            <h3>{Modul3.y()}</h3>
+            <hr></hr>
+            <h3>{Modul3.z()}</h3>
+            <hr></hr>
+            <h3>{funckija_iz_modula_4()}</h3>
+            <hr></hr>
+        </div>
+    );
+};
 
 export default PrimerModula;
