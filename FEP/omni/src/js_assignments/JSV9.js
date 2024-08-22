@@ -8,6 +8,25 @@
 */
 
 import { useState, useEffect } from 'react';
+import { Bar } from 'react-chartjs-2';
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+);
 
 const calculateLetterFrequency = (text) => {
     const alphabetSize = 26;
@@ -48,19 +67,36 @@ const JSV9 = () => {
         setText(e.target.value);
     };
 
-    const renderTableRows = () => {
-        return letterFrequencies.map((frequency, k) => (
-            <tr key={k}>
-                <td>
-                    {String.fromCharCode('a'.charCodeAt(0) + k).toUpperCase()}
-                </td>
-                <td>{frequency.toFixed(2)}%</td>
-            </tr>
-        ));
+    const data = {
+        labels: Array.from({ length: 26 }, (_, i) =>
+            String.fromCharCode('a'.charCodeAt(0) + i).toUpperCase()
+        ),
+        datasets: [
+            {
+                label: 'Procenat pojavljivanja',
+                data: letterFrequencies,
+                backgroundColor: '#4BC0C099',
+                borderColor: '#4BC0C0',
+                borderWidth: 1,
+            },
+        ],
+    };
+
+    const options = {
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    callback: function (value) {
+                        return value + '%';
+                    },
+                },
+            },
+        },
     };
 
     return (
-        <div>
+        <div style={{ margin: 'auto', textAlign: 'center' }}>
             <label>
                 Unesite tekst:{' '}
                 <input
@@ -72,15 +108,7 @@ const JSV9 = () => {
             </label>
             <br />
             <br />
-            <table>
-                <thead>
-                    <tr>
-                        <th>Slovo</th>
-                        <th>Procenat</th>
-                    </tr>
-                </thead>
-                <tbody>{renderTableRows()}</tbody>
-            </table>
+            <Bar data={data} options={options} />
         </div>
     );
 };
