@@ -34,7 +34,8 @@ import JSV6 from './js_assignments/JSV6';
 import JSV7 from './js_assignments/JSV7';
 import JSV8 from './js_assignments/JSV8';
 import JSV9 from './js_assignments/JSV9';
-import JSV10 from './js_assignments/JSV10';
+import JSV10a from './js_assignments/JSV10a';
+import JSV10b from './js_assignments/JSV10b';
 import Zadatak_J4 from './html_assignments/Zadatak_J4';
 import Zadatak_J5 from './html_assignments/Zadatak_J5';
 import Zadatak_J6 from './html_assignments/Zadatak_J6';
@@ -231,8 +232,12 @@ const router = createBrowserRouter([
         element: <JSV9 />,
     },
     {
-        path: '/js_assignments/z10',
-        element: <JSV10 />,
+        path: '/js_assignments/z10a',
+        element: <JSV10a />,
+    },
+    {
+        path: '/js_assignments/z10b',
+        element: <JSV10b />,
     },
     {
         path: 'jsx/osnove',

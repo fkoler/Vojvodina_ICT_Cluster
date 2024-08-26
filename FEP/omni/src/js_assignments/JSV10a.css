@@ -1,0 +1,62 @@
+body {
+    background-color: #d0d0d0;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}
+
+.grid {
+    display: inline-block;
+}
+
+.row {
+    display: flex;
+}
+
+.table-display {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+th {
+    width: 110px;
+}
+
+.cell {
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d0d0d0;
+    font-size: 8px;
+}
+
+.cell.start {
+    border: 1px solid #ff0000;
+}
+
+.black {
+    background-color: #000000;
+}
+
+.white {
+    background-color: #ffffff;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+input[type='number'] {
+    text-align: center;
+}

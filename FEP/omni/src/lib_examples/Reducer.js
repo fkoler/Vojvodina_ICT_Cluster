@@ -2,62 +2,60 @@
 // Omogucava prilagodjenu logiku stanja
 // Koristi se ako vodite racuna o vise delova stanja koji se oslanjaju na slozenu logiku
 
-import { useReducer } from "react"
+import { useReducer } from 'react';
 
 // Sintaksa:
 //      useReducer(<reducer>, <initialState>)
 //          - reducer - funkcija koja sadrzi prilagodjenu logiku stanja, odredjuje kako se stanje azurira. Treba da uzme stanje i akciju kao argumente i da vrati sledece stanje.
 //          - initialState - jednostavna vrednost, obicno objekat, vrednost iz koje se izracunava pocetno stanje
-//          - init? (opcionalno) - funkcija koja treba da vrati pocetno stanje; ako nije navedeno, pocetno stanje je postavljeno na initialState 
-//      Povratna vrednost: 
+//          - init? (opcionalno) - funkcija koja treba da vrati pocetno stanje; ako nije navedeno, pocetno stanje je postavljeno na initialState
+//      Povratna vrednost:
 //          - currentState - trenutno stanje
-//          - dispatch funkcija - omogucava azuriranje stanja i pokretanje ponovnog prikaza komponente 
+//          - dispatch funkcija - omogucava azuriranje stanja i pokretanje ponovnog prikaza komponente
 //                              - prima akciju (action) argument - predstavalja radnju koju je korisnik izvrsio, vrednost bilo koje vrste. Po konvenciji, to je obicno objekat da svojstvom tipa koji ga identifikuje i opciono drugim svojstvima sa dodatnim informacijama.
 //                              - nema povratnu vrednost
-
-
-
 
 // 1. kreiranje reducer funkcije, koju cemo koristiti da definisemo kako ce stanje da se azurira
 const reducer = (state, action) => {
     // Argumente ce dobiti od React-a, i na osnovu toga ce izracunati i vratiti sledece stanje, React ce sacuvati stanje, prikazati ponovo komponentu i azurirati korisnicki interfejs
 
-    // proverimo koju akciju je korisnik uradio i na osnovu toga izmenimo stanje 
-    if(action.type === 'povecaj_brojac') {
+    // proverimo koju akciju je korisnik uradio i na osnovu toga izmenimo stanje
+    if (action.type === 'povecaj_brojac') {
         return {
-            brojac: state.brojac + 1
-        }
-    }else if(action.type === 'umanji_brojac'){
+            brojac: state.brojac + 1,
+        };
+    } else if (action.type === 'umanji_brojac') {
         return {
-            brojac: state.brojac - 1
-        }
+            brojac: state.brojac - 1,
+        };
     }
 
     // ako akciju nismo definisali onda izbacimo gresku
-    throw Error('Nepoznata akcija')
-}
-
+    throw Error('Nepoznata akcija');
+};
 
 const Reducer = () => {
-    //2. kreiramo stanje pomocu useReducer hook-a, koji prima funkciju reducer koja definise kako se stanje menja i inicijalnu vrednost stanja 
-    const [state, dispatch] = useReducer(reducer, {brojac: 42})
-    
+    //2. kreiramo stanje pomocu useReducer hook-a, koji prima funkciju reducer koja definise kako se stanje menja i inicijalnu vrednost stanja
+    const [state, dispatch] = useReducer(reducer, { brojac: 42 });
+
     // da biste azurirali ono sto je prikazano, neophodno je pozvati dispatch metodu sa objektom koji predstavlja sta je korisnik uradio
     const povecajBrojac = () => {
         // 3. pozovemo azuriranje stanja
-        dispatch({type: 'povecaj_brojac'});
-    }
+        dispatch({ type: 'povecaj_brojac' });
+    };
 
     const umanjiBrojac = () => {
-        dispatch({type: 'umanji_brojac'});
-    }
+        dispatch({ type: 'umanji_brojac' });
+    };
 
-    return <div>
-        <p> {state.brojac} </p> 
-        <button onClick={umanjiBrojac}> - </button>
-        <button onClick={povecajBrojac}> + </button>
-    </div>
-}
+    return (
+        <div>
+            <p> {state.brojac} </p>
+            <button onClick={umanjiBrojac}> - </button>
+            <button onClick={povecajBrojac}> + </button>
+        </div>
+    );
+};
 
 export default Reducer;
 

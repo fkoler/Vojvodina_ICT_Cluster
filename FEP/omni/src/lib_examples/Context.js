@@ -22,78 +22,71 @@
         4. Upotrebom context consumer-a procitati datu vrednost u bilo kojoj komponenti 
 */
 
-import React from "react";
+import React from 'react';
 
 //Primer prop drilling-a
 
 const PropDrilling = () => {
-    return <UserPropDrilling name={"Aleksandar"}/>
-}
+    return <UserPropDrilling name={'Aleksandar'} />;
+};
 
-const UserPropDrilling = ({name}) => {
-    return <NamePropDrilling name={name}/>
-}
+const UserPropDrilling = ({ name }) => {
+    return <NamePropDrilling name={name} />;
+};
 
-const NamePropDrilling = ({name}) => {
-    return (
-        <h1>{name}</h1>
-    ) 
-}
+const NamePropDrilling = ({ name }) => {
+    return <h1>{name}</h1>;
+};
 
 // Primer upotrebe React context-a
 
-// Korak 1. 
+// Korak 1.
 export const UserContext = React.createContext();
 
 const ContextPrimer1 = () => {
-    {/* Korak 2. i 3.*/}
-    return (
-        <UserContext.Provider value={{name:"Petar"}}>
-            <UserPrimer1/>
-        </UserContext.Provider>
-    )
+    /* Korak 2. i 3.*/
 
-}
+    return (
+        <UserContext.Provider value={{ name: 'Petar' }}>
+            <UserPrimer1 />
+        </UserContext.Provider>
+    );
+};
 
 const UserPrimer1 = () => {
-    {/* Korak 4. izveden pojmocu useContext hook-a*/}
+    /* Korak 4. izveden pojmocu useContext hook-a*/
+
     const student = React.useContext(UserContext);
     return <h1>{student.name}</h1>;
-}
-
+};
 
 //Kako se resava problem prop drilling-a pomocu React context-a
 
 const ContextPrimer2 = () => {
     return (
-        <UserContext.Provider value={{name:"Jovana"}}>
-            <UserPrimer2/>
+        <UserContext.Provider value={{ name: 'Jovana' }}>
+            <UserPrimer2 />
         </UserContext.Provider>
-    )
-}
+    );
+};
 
 const UserPrimer2 = () => {
-    return <UserName/>
-    
-}
+    return <UserName />;
+};
 
 const UserName = () => {
     const student = React.useContext(UserContext);
     return <h1>{student.name}</h1>;
-}
+};
 
 const Context = () => {
-    
     return (
         <>
-            <PropDrilling/>
-            <ContextPrimer1/>
-            <ContextPrimer2/>
+            <PropDrilling />
+            <ContextPrimer1 />
+            <ContextPrimer2 />
         </>
-        
-    )
-
-}
+    );
+};
 
 export default Context;
-
