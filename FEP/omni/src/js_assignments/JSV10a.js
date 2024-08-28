@@ -148,13 +148,13 @@ const JSV10a = () => {
     const getAntSymbol = (orientation) => {
         switch (orientation) {
             case 'N':
-                return '⬆️';
+                return '👆🏽';
             case 'E':
-                return '➡️';
+                return '👉🏽';
             case 'S':
-                return '⬇️';
+                return '👇🏽';
             case 'W':
-                return '⬅️';
+                return '👈🏽';
             default:
                 return ' ';
         }

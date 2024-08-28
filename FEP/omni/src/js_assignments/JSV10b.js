@@ -21,7 +21,7 @@
 import { useState } from 'react';
 import './JSV10a.css';
 
-const initialGridSize = 59;
+const initialGridSize = 91;
 
 const COLOR_BLACK = 'Crna';
 const COLOR_WHITE = 'Bela';
@@ -86,46 +86,8 @@ const JSV10b = () => {
         },
     ]);
 
-    const [desiredGenerations, setDesiredGenerations] = useState(0);
+    const [desiredGenerations, setDesiredGenerations] = useState(1);
     const [isAntOutOfBounds, setIsAntOutOfBounds] = useState(false);
-
-    const handleNextGeneration = () => {
-        const {
-            grid: newGrid,
-            x,
-            y,
-            orientation,
-            outOfBounds,
-        } = langtonsAnt(grid, antState.x, antState.y, antState.orientation);
-
-        if (outOfBounds) {
-            console.warn('Mrav je izašao izvan granica tabele.');
-            setIsAntOutOfBounds(true);
-            return;
-        }
-
-        setGrid(newGrid);
-        setAntState({ x, y, orientation });
-        setGeneration((prev) => prev + 1);
-        setIsAntOutOfBounds(false);
-
-        const currentColor = newGrid[Math.floor(initialGridSize / 2) - y][
-            Math.floor(initialGridSize / 2) + x
-        ]
-            ? COLOR_BLACK
-            : COLOR_WHITE;
-
-        setHistory((prevHistory) => [
-            ...prevHistory,
-            {
-                generation: generation + 1,
-                x,
-                y,
-                orientation,
-                color: currentColor,
-            },
-        ]);
-    };
 
     const handleMultipleGenerations = () => {
         const newHistory = [...history];
@@ -145,7 +107,7 @@ const JSV10b = () => {
 
             if (result.outOfBounds) {
                 setIsAntOutOfBounds(true);
-                console.warn('Mrav je izašao izvan granica tabele.');
+                console.warn('Mrav je izašao izvan granice sveta');
                 break;
             }
 
@@ -191,22 +153,35 @@ const JSV10b = () => {
             { generation: 0, x: 0, y: 0, orientation: 'N', color: COLOR_BLACK },
         ]);
         setIsAntOutOfBounds(false);
-        setDesiredGenerations(0);
+        setDesiredGenerations(1);
     };
 
     const getAntSymbol = (orientation) => {
         switch (orientation) {
             case 'N':
-                return '⬆️';
+                return '👆🏽';
             case 'E':
-                return '➡️';
+                return '👉🏽';
             case 'S':
-                return '⬇️';
+                return '👇🏽';
             case 'W':
-                return '⬅️';
+                return '👈🏽';
             default:
                 return ' ';
         }
+    };
+
+    const downloadHistoryAsJSON = () => {
+        const jsonString = JSON.stringify(history, null, 2);
+        const blob = new Blob([jsonString], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+
+        link.href = url;
+        link.download = 'history.json';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     return (
@@ -217,31 +192,26 @@ const JSV10b = () => {
                     {Math.max(...history.map((entry) => entry.generation))}
                 </h2>
 
-                <button
-                    onClick={handleNextGeneration}
-                    disabled={isAntOutOfBounds}
-                >
-                    Sledeća generacija
-                </button>
-                <br />
-                <br />
                 <input
                     type='number'
                     value={desiredGenerations}
-                    onChange={(e) =>
-                        setDesiredGenerations(Number(e.target.value))
-                    }
+                    onChange={(e) => setDesiredGenerations(+e.target.value)}
                 />
 
                 <button
                     onClick={handleMultipleGenerations}
                     disabled={isAntOutOfBounds}
                 >
-                    Izvrši više generacija
+                    Izvrši generacije
                 </button>
                 <br />
                 <br />
                 <button onClick={resetSimulation}>Resetuj simulaciju</button>
+                <br />
+                <br />
+                <button onClick={downloadHistoryAsJSON}>
+                    Preuzmi Istoriju (JSON)
+                </button>
                 <br />
                 <br />
                 <div className='grid'>
@@ -278,12 +248,16 @@ const JSV10b = () => {
                 {isAntOutOfBounds && (
                     <p
                         style={{
-                            color: 'red',
+                            color: '#ff0000',
+                            backgroundColor: '#000000',
                             fontWeight: '900',
                             textTransform: 'uppercase',
+                            fontSize: '24px',
+                            marginBottom: '40px',
+                            padding: '10px',
                         }}
                     >
-                        Mrav je izašao izvan granica tabele.
+                        Mrav je izašao izvan granice sveta
                     </p>
                 )}
 
@@ -301,15 +275,18 @@ const JSV10b = () => {
                         </thead>
 
                         <tbody>
-                            {history.map((entry, index) => (
-                                <tr key={index}>
-                                    <td>{entry.generation}</td>
-                                    <td>{entry.x}</td>
-                                    <td>{entry.y}</td>
-                                    <td>{entry.orientation}</td>
-                                    <td>{entry.color}</td>
-                                </tr>
-                            ))}
+                            {history
+                                .slice()
+                                .reverse()
+                                .map((entry, index) => (
+                                    <tr key={index}>
+                                        <td>{entry.generation}</td>
+                                        <td>{entry.x}</td>
+                                        <td>{entry.y}</td>
+                                        <td>{entry.orientation}</td>
+                                        <td>{entry.color}</td>
+                                    </tr>
+                                ))}
                         </tbody>
                     </table>
                 </div>

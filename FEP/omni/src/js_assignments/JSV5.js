@@ -7,7 +7,7 @@
     c. Modifikovati React kontrolu tako da umesto da moram da pritisnem dugme, jednostavno ispod kontrole pise da li je ono sto je uneto je palindrom ili nije.
 */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import _ from 'lodash';
 
 const is_palindrome = (str) => {
