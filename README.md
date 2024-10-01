@@ -61,3 +61,37 @@
 -   Jackson and Spring - Serialization and Deserialization
 -   Working with HTTP Codes
 -   Data Transfer Objects (DTO)
+-   Validation - Hibernate Validator
+-   Debugging
+-   Computer Systems Security
+-   HTTP Basic Auth
+-   Token-Based Authentication
+-   Version Control and Git
+-   Spring Tool Suite and Git
+-   Maven: Testing and Packaging the Server
+-   Software Testing
+-   Testing REST Applications: JUnit Tests
+-   Conceptual Modeling - ArgoUML
+
+## 5. Frontend Development
+
+-   HTML5 and CSS3: Basics and Advanced Concepts
+-   JavaScript:
+    -   Basics
+    -   Utility Classes
+    -   Functional Programming
+    -   Object-Oriented Programming
+-   React:
+    -   Functional Components
+    -   Conditional Rendering
+    -   Lists
+    -   Events
+    -   Hook Programming in React: Effect and State
+    -   Fetch API and React
+    -   Routing
+    -   JSX
+    -   Immer
+    -   Context
+    -   Reducer
+    -   Memo
+    -   Callback

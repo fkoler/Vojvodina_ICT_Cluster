@@ -1,1 +1,24 @@
-/bin/
+# Logs
+FEP/omni/logs
+FEP/omni/*.log
+FEP/omni/npm-debug.log*
+FEP/omni/yarn-debug.log*
+FEP/omni/yarn-error.log*
+FEP/omni/pnpm-debug.log*
+FEP/omni/lerna-debug.log*
+
+FEP/omni/node_modules
+FEP/omni/dist
+FEP/omni/dist-ssr
+FEP/omni/*.local
+
+# Editor directories and files
+FEP/omni/.vscode/*
+FEP/omni/!.vscode/extensions.json
+FEP/omni/.idea
+FEP/omni/.DS_Store
+FEP/omni/*.suo
+FEP/omni/*.ntvs*
+FEP/omni/*.njsproj
+FEP/omni/*.sln
+FEP/omni/*.sw?
